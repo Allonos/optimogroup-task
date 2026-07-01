@@ -1,0 +1,36 @@
+@import "../utils/Fonts.css";
+@import "../utils/FontSizeVariables.css";
+@import "../utils/ColorVariables.css";
+@import "../styles/headers/DefaultHeader.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter Tight', sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  background-color: rgba(var(--bg-dark-1));
+  margin: 0;
+  padding: 0;
+}
+
+.game-layout {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
