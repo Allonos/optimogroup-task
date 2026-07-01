@@ -22,9 +22,6 @@
 }
 
 .header__balance-label {
-  font-size: var(--body-small);
-  font-weight: 600;
-  line-height: 15px;
   color: rgba(var(--text-grey));
 }
 

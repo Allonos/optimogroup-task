@@ -4,12 +4,14 @@
 .game-info-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 64px;
   display: flex;
   flex-direction: column;
   gap: 1px;
-  max-height: 585px;
+  max-height: 649px;
   overflow-y: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .game-info-list-item {
@@ -44,9 +46,6 @@
 }
 
 .game-info-list-item span {
-  font-size: var(--body-small);
-  font-weight: 600;
-  line-height: 15px;
   color: rgba(var(--text-white));
 }
 

@@ -7,7 +7,7 @@ const DefaultTab = forwardRef(({ label, active, onClick }, ref) => {
       className={`default-tab ${active ? 'active' : ''}`}
       onClick={onClick}
     >
-      <span>{label}</span>
+      <span className='text-body-small-semibold'>{label}</span>
     </button>
   );
 });

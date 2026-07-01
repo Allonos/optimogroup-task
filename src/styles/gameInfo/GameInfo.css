@@ -1,0 +1,38 @@
+.bets-list-tabs-container {
+  max-width: 410px;
+  width: 100%;
+  position: relative;
+}
+
+.bets-list-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  min-height: 56px;
+  padding: 12px;
+  background-color: rgba(var(--bg-dark-3));
+  border-radius: 8px;
+}
+
+.bets-list-footer__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bets-list-footer__label {
+  color: rgba(var(--text-disabled));
+}
+
+.bets-list-footer__value {
+  color: rgba(var(--text-white));
+}
+
+.bets-list-footer__item:last-child {
+  text-align: right;
+}

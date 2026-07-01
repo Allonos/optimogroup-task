@@ -12,4 +12,6 @@
   --winner-gradient-start: 0, 100, 17, 0.461;
   --winner-gradient-end: 30, 131, 33, 0.291;
   --text-my-bet: 255, 188, 18, 1;
+  --text-disabled: 101, 99, 114, 1;
+  --line: 255, 255, 255, 0.1;
 }

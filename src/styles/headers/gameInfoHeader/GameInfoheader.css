@@ -5,15 +5,12 @@
   padding: 10px 16px;
   display: grid;
   grid-template-columns: 110px 130px 86px;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
   width: 100%;
 }
 
 .game-info-header-item {
-  font-size: var(--body-small);
-  font-weight: 600;
-  line-height: 15px;
   color: rgba(var(--text-grey));
 }

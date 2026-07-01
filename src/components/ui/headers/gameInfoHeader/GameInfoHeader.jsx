@@ -8,7 +8,10 @@ const GameInfoHeader = () => {
   return (
     <div className='game-info-header'>
       {gameInfoHeaders.map((header) => (
-        <span key={header.id} className='game-info-header-item'>
+        <span
+          key={header.id}
+          className='game-info-header-item text-body-small-semibold'
+        >
           {header.title}
         </span>
       ))}

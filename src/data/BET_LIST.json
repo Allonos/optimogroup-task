@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "playerName": "G****t",
     "bet": "20.00",
     "betWin": "0.00X",
@@ -7,6 +8,7 @@
     "status": "my-bet"
   },
   {
+    "id": 1,
     "playerName": "G****t",
     "bet": "10.00",
     "betWin": "244.62X",
@@ -14,6 +16,7 @@
     "status": "my-win"
   },
   {
+    "id": 2,
     "playerName": "G****t",
     "bet": "10.00",
     "betWin": "0.00X",
@@ -21,6 +24,7 @@
     "status": "default"
   },
   {
+    "id": 3,
     "playerName": "G****t",
     "bet": "10.00",
     "betWin": "244.62X",
@@ -28,6 +32,7 @@
     "status": "winner"
   },
   {
+    "id": 4,
     "playerName": "M****o",
     "bet": "5.00",
     "betWin": "2.14X",
@@ -35,6 +40,7 @@
     "status": "winner"
   },
   {
+    "id": 5,
     "playerName": "A****v",
     "bet": "15.00",
     "betWin": "0.00X",
@@ -42,6 +48,7 @@
     "status": "default"
   },
   {
+    "id": 6,
     "playerName": "T****i",
     "bet": "50.00",
     "betWin": "1.87X",
@@ -49,6 +56,7 @@
     "status": "winner"
   },
   {
+    "id": 7,
     "playerName": "D****e",
     "bet": "2.00",
     "betWin": "0.00X",
@@ -56,6 +64,7 @@
     "status": "default"
   },
   {
+    "id": 8,
     "playerName": "K****a",
     "bet": "100.00",
     "betWin": "3.42X",
@@ -63,6 +72,7 @@
     "status": "winner"
   },
   {
+    "id": 9,
     "playerName": "R****z",
     "bet": "25.00",
     "betWin": "0.00X",
@@ -70,6 +80,7 @@
     "status": "default"
   },
   {
+    "id": 10,
     "playerName": "S****k",
     "bet": "8.00",
     "betWin": "12.05X",
@@ -77,6 +88,7 @@
     "status": "my-win"
   },
   {
+    "id": 11,
     "playerName": "N****v",
     "bet": "30.00",
     "betWin": "1.02X",
@@ -84,6 +96,7 @@
     "status": "winner"
   },
   {
+    "id": 12,
     "playerName": "L****e",
     "bet": "12.00",
     "betWin": "0.00X",
@@ -91,13 +104,15 @@
     "status": "default"
   },
   {
+    "id": 13,
     "playerName": "V****n",
     "bet": "60.00",
-    "betWin": "5.73X",
-    "cashout": "343.80",
-    "status": "winner"
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
   },
   {
+    "id": 14,
     "playerName": "O****z",
     "bet": "3.00",
     "betWin": "0.00X",

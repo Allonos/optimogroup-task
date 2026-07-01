@@ -4,12 +4,18 @@ const GameInfoList = ({ playerName, bet, cashout, betWin, status }) => {
 
   return (
     <li className={itemClassName}>
-      <span className='game-info-list-item__player-name'>{playerName}</span>
+      <span className='game-info-list-item__player-name text-body-small-semibold'>
+        {playerName}
+      </span>
       <div className={`game-info-list-item__bet`}>
-        <span>{bet}</span>
-        {betWin !== '0.00X' && <span className='game-info-win'>{betWin}</span>}
+        <span className='text-body-small-semibold'>{bet}</span>
+        {betWin !== '0.00X' && (
+          <span className='game-info-win text-body-small-semibold'>
+            {betWin}
+          </span>
+        )}
       </div>
-      <span>{cashout}</span>
+      <span className='text-body-small-semibold'>{cashout}</span>
     </li>
   );
 };
