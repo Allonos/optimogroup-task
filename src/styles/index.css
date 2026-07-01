@@ -2,6 +2,10 @@
 @import "../utils/FontSizeVariables.css";
 @import "../utils/ColorVariables.css";
 @import "../styles/headers/DefaultHeader.css";
+@import "../styles/tabs/defaultTab/DefaultTab.css";
+@import "../styles/tabs/betsListTabs/BetsListTabs.css";
+@import "../styles/headers/gameInfoHeader/GameInfoheader.css";
+@import "../styles/lists/gameInfoList/GameInfoList.css";
 
 *,
 *::before,
@@ -34,3 +38,15 @@ body {
   margin: 0 auto;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}

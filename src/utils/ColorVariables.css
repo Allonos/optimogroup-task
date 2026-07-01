@@ -1,7 +1,15 @@
 :root {
   --bg-dark-1: 21, 20, 25, 1;
   --bg-dark-2: 29, 28, 35, 1;
+  --bg-dark-3: 45, 44, 53, 1;
   --text-grey: 126, 124, 141, 1;
   --text-white: 255, 255, 255, 1;
   --border-white: 255, 255, 255, 1;
+  --green-gradient-start: 0, 144, 24, 1;
+  --green-gradient-end: 38, 166, 60, 1;
+  --my-win-gradient-start: 0, 100, 17, 0.775;
+  --my-win-gradient-end: 30, 131, 47, 0.792;
+  --winner-gradient-start: 0, 100, 17, 0.461;
+  --winner-gradient-end: 30, 131, 33, 0.291;
+  --text-my-bet: 255, 188, 18, 1;
 }

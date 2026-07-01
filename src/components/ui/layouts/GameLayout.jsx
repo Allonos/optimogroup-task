@@ -1,4 +1,4 @@
-import DefaultHeader from '../header/DefaultHeader';
+import DefaultHeader from '../headers/DefaultHeader';
 
 const GameLayout = ({ children }) => {
   return (

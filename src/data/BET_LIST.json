@@ -1,0 +1,107 @@
+[
+  {
+    "playerName": "G****t",
+    "bet": "20.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "my-bet"
+  },
+  {
+    "playerName": "G****t",
+    "bet": "10.00",
+    "betWin": "244.62X",
+    "cashout": "0.00",
+    "status": "my-win"
+  },
+  {
+    "playerName": "G****t",
+    "bet": "10.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "playerName": "G****t",
+    "bet": "10.00",
+    "betWin": "244.62X",
+    "cashout": "0.00",
+    "status": "winner"
+  },
+  {
+    "playerName": "M****o",
+    "bet": "5.00",
+    "betWin": "2.14X",
+    "cashout": "10.70",
+    "status": "winner"
+  },
+  {
+    "playerName": "A****v",
+    "bet": "15.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "playerName": "T****i",
+    "bet": "50.00",
+    "betWin": "1.87X",
+    "cashout": "93.50",
+    "status": "winner"
+  },
+  {
+    "playerName": "D****e",
+    "bet": "2.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "playerName": "K****a",
+    "bet": "100.00",
+    "betWin": "3.42X",
+    "cashout": "342.00",
+    "status": "winner"
+  },
+  {
+    "playerName": "R****z",
+    "bet": "25.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "playerName": "S****k",
+    "bet": "8.00",
+    "betWin": "12.05X",
+    "cashout": "96.40",
+    "status": "my-win"
+  },
+  {
+    "playerName": "N****v",
+    "bet": "30.00",
+    "betWin": "1.02X",
+    "cashout": "30.60",
+    "status": "winner"
+  },
+  {
+    "playerName": "L****e",
+    "bet": "12.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "playerName": "V****n",
+    "bet": "60.00",
+    "betWin": "5.73X",
+    "cashout": "343.80",
+    "status": "winner"
+  },
+  {
+    "playerName": "O****z",
+    "bet": "3.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  }
+]

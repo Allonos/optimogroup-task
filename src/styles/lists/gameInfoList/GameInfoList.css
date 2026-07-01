@@ -1,0 +1,80 @@
+@import "../../../utils/ColorVariables.css";
+@import "../../../utils/FontSizeVariables.css";
+
+.game-info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-height: 585px;
+  overflow-y: auto;
+}
+
+.game-info-list-item {
+  box-sizing: border-box;
+  flex: 0 0 48px;
+  height: 48px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 110px 130px 86px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+  background-color: rgba(var(--bg-dark-2));
+  border-radius: 8px;
+}
+
+.game-info-list-item--default {
+  background-color: rgba(var(--bg-dark-2));
+}
+
+.game-info-list-item--my-win {
+  background: linear-gradient(90deg, rgba(var(--my-win-gradient-start)) 0%, rgba(var(--my-win-gradient-end)) 100%);
+}
+
+.game-info-list-item--winner {
+  background: linear-gradient(90deg, rgba(var(--winner-gradient-start)) 0%, rgba(var(--winner-gradient-end)) 100%);
+}
+
+.game-info-list-item span:last-child {
+  justify-self: end;
+  text-align: right;
+}
+
+.game-info-list-item span {
+  font-size: var(--body-small);
+  font-weight: 600;
+  line-height: 15px;
+  color: rgba(var(--text-white));
+}
+
+.game-info-list-item--my-bet span {
+  color: rgba(var(--text-my-bet));
+}
+
+.game-info-list-item--default .game-info-list-item__player-name {
+  color: rgba(var(--text-grey));
+}
+
+.game-info-list-item__player-name {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-info-list-item__bet {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.game-info-win {
+  padding: 4.5px 8px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, rgba(var(--green-gradient-start)) 0%, rgba(var(--green-gradient-end)) 100%);
+
+}

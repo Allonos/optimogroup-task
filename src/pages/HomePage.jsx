@@ -1,9 +1,10 @@
-import GameLayout from '../components/ui/layouts/GameLayout';
+import GameLayout from '@/components/ui/layouts/GameLayout';
+import BetsListSection from '@/components/ui/sections/BetsListSection';
 
 const HomePage = () => {
   return (
     <GameLayout>
-      <div>HomePage</div>
+      <BetsListSection />
     </GameLayout>
   );
 };
