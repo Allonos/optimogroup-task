@@ -4,6 +4,17 @@
   position: relative;
 }
 
+.stats-list-header {
+  position: relative;
+}
+
+.stats-list-header-tabs {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(var(--bg-dark-1));
+}
+
 .bets-list-footer {
   display: flex;
   justify-content: space-between;

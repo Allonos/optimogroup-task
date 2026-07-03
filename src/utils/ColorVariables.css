@@ -17,4 +17,14 @@
   --icon-green: 81, 207, 62, 1;
   --icon-white: 255, 255, 255, 1;
   --icon-grey: 126, 124, 141, 1;
+  --stat-low-border: 74, 71, 83, 1;
+  --stat-low-bg: 74, 71, 83, 0.2;
+  --stat-medium-border: 145, 177, 197, 1;
+  --stat-medium-bg: 145, 177, 197, 0.2;
+  --stat-high-border: 61, 180, 224, 1;
+  --stat-high-bg:61, 180, 224, 0.2;
+  --stat-very-high-border: 242, 213, 81, 1;
+  --stat-very-high-bg: 242, 213, 81, 0.4;
+  --stat-ultra-border: 134, 189, 52, 1;
+  --stat-ultra-bg: 134, 189, 52, 0.4;
 }

@@ -1,0 +1,25 @@
+.info-stat-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  padding: 12px;
+  gap: 4px;
+}
+
+.info-stat {
+  min-width: 60px;
+  max-width: 80px;
+  padding: 4.5px 4px;
+  width: 100%;
+  border: 1px solid var(--stat-border-color);
+  background-color: var(--stat-bg-color);
+  border-radius: 100px;
+  text-align: center;
+}
+
+.info-stat-value {
+  font-size: var(--body-small);
+  font-weight: 600;
+  line-height: 15px;
+  color: rgba(var(--text-white));
+}
