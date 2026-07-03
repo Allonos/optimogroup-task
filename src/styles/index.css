@@ -20,18 +20,14 @@
 body {
   margin: 0;
   font-family: 'Inter Tight', sans-serif;
+  background-color: rgba(var(--bg-dark-1));
+  padding: 0;
 }
 
 html,
 body,
 #root {
   min-height: 100vh;
-}
-
-body {
-  background-color: rgba(var(--bg-dark-1));
-  margin: 0;
-  padding: 0;
 }
 
 .game-layout {
@@ -57,4 +53,14 @@ body {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+}
+
+.icon [data-name="fill"] {
+    fill: var(--icon-color, currentColor) !important;
+    transition: 300ms ease-out;
+}
+
+.icon [data-name="stroke"] {
+    stroke: var(--icon-color, currentColor) !important;
+    transition: 300ms ease-out;
 }

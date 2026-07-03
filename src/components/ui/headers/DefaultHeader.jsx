@@ -12,7 +12,10 @@ const DefaultHeader = () => {
           <p className='header__balance-value'>452.20 USD</p>
         </div>
         <button className='header__menu-button'>
-          <MenuIcon />
+          <MenuIcon
+            className='icon'
+            style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
+          />
         </button>
       </div>
     </header>

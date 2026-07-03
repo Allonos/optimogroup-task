@@ -3,8 +3,7 @@ import DefaultTab from '../defaultTab/DefaultTab';
 
 const TABS = ['All Bets', 'My Bets', 'Leaderboard', 'Stats'];
 
-const BetsListTabs = () => {
-  const [activeTab, setActiveTab] = useState('All Bets');
+const BetsListTabs = ({ activeTab, setActiveTab }) => {
   const tabRefs = useRef({});
   const containerRef = useRef(null);
   const [indicator, setIndicator] = useState({ x: 0, width: 0 });

@@ -40,7 +40,10 @@
   background: linear-gradient(90deg, rgba(var(--winner-gradient-start)) 0%, rgba(var(--winner-gradient-end)) 100%);
 }
 
-.game-info-list-item span:last-child {
+.game-info-list-item div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   justify-self: end;
   text-align: right;
 }
