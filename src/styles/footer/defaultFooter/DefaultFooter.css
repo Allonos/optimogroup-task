@@ -1,6 +1,13 @@
 @import "../../../utils/ColorVariables.css";
 @import "../../../utils/FontSizeVariables.css";
 
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 1440px;
+}
+
 .default-footer {
   display: flex;
   justify-content: space-between;

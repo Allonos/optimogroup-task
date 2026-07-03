@@ -19,7 +19,7 @@ const GameInfoList = ({
   const itemClassName = `game-info-list-item game-info-list-item--${normalizedStatus}`;
 
   return (
-    <li className={itemClassName}>
+    <div className={itemClassName}>
       <span className='game-info-list-item__player-name text-body-small-semibold'>
         {isMyBets ? `${date} ${time}` : playerName}
       </span>
@@ -40,7 +40,7 @@ const GameInfoList = ({
           />
         )}
       </div>
-    </li>
+    </div>
   );
 };
 

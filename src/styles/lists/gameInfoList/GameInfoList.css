@@ -8,7 +8,8 @@
   display: flex;
   flex-direction: column;
   gap: 1px;
-  max-height: 649px;
+  max-height: 585px;
+  height: 100%;
   overflow-y: auto;
   position: relative;
   z-index: 1;

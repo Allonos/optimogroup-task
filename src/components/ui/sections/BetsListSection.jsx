@@ -51,13 +51,14 @@ const BetsListSection = () => {
       );
     case "Stats":
       return (
-        <div className='stats-list-header'>
-          <div className="stats-list-header-tabs">
-            <StatsTabs activeStatTab={activeStatTab} setActiveStatTab={setActiveStatTab} />
-            <div className="separator" style={{ '--separator-color': "rgba(var(--line))" }} />
+        <>
+          <div className='stats-list-header'>
+            <div className="stats-list-header-tabs">
+              <div className="separator" style={{ '--separator-color': "rgba(var(--line))" }} />
+            </div>
           </div>
           <GameInfoStatsList />
-        </div>
+        </>
       )
     }
   }
@@ -66,9 +67,10 @@ const BetsListSection = () => {
     <section className='bets-list-tabs-container'>
       <BetsListTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       {activeTab !== "Stats" && activeTab !== "Leaderboard" && <GameInfoHeader />}
-      <ul className='game-info-list no-scrollbar'>
+      {activeTab === "Stats" && <StatsTabs activeStatTab={activeStatTab} setActiveStatTab={setActiveStatTab} />}
+      <div className={`game-info-list ${activeTab !== "Stats" ? "no-scrollbar" : "custom-scroll"}`}>
         {renderList()}
-      </ul>
+      </div>
       <BetsListFooter />
     </section>
   );
