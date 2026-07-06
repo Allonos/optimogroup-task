@@ -5,8 +5,8 @@
   --text-grey: 126, 124, 141, 1;
   --text-white: 255, 255, 255, 1;
   --border-white: 255, 255, 255, 1;
-  --green-gradient-start: 0, 144, 24, 1;
-  --green-gradient-end: 38, 166, 60, 1;
+  --green-gradient-start: 38, 166, 60, 1;
+  --green-gradient-end: 0, 144, 24, 1;
   --my-win-gradient-start: 0, 100, 17, 0.775;
   --my-win-gradient-end: 30, 131, 47, 0.792;
   --winner-gradient-start: 0, 100, 17, 0.461;
@@ -27,4 +27,7 @@
   --stat-very-high-bg: 242, 213, 81, 0.4;
   --stat-ultra-border: 134, 189, 52, 1;
   --stat-ultra-bg: 134, 189, 52, 0.4;
+  --scrollbar-light: 152, 94, 255, 1;
+  --scrollbar-dark: 103, 36, 221, 1;
+  --button-grey: 45, 44, 53, 1;
 }

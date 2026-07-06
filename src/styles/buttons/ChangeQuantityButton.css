@@ -1,0 +1,13 @@
+@import "../../utils/ColorVariables.css";
+
+.change-quantity {
+  padding: 12px;
+  background-color: rgba(var(--button-grey));
+  max-width: 40px;
+  max-height: 40px;
+  width: 100%;
+  height: 100%;
+  border-radius: 34px;
+  border: none;
+  cursor: pointer;
+}
