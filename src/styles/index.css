@@ -14,6 +14,7 @@
 @import "../styles/headers/gameHeader/GameHeader.css";
 @import "../styles/buttons/ChangeQuantityButton.css";
 @import "../styles/cards/BetPlaceCard.css";
+@import "../styles/switches/DefaultSwitch.css";
 
 *,
 *::before,

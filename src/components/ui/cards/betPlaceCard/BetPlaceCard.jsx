@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import BetControls from '@/components/ui/cards/betPlaceCard/components/BetControls'
+import AutoBetControls from '@/components/ui/cards/betPlaceCard/components/AutoBetControls'
 
 const BetPlaceCard = () => {
   const [quantity, setQuantity] = useState(1.0)
   const presets = [2.0, 5.0, 10.0, 20.0]
+
+  const [autoBetEnabled, setAutoBetEnabled] = useState(true)
+  const [autoCashoutEnabled, setAutoCashoutEnabled] = useState(false)
+  const [multiplier, setMultiplier] = useState(2.0)
 
   return (
     <div className='bet-place-container'>
@@ -14,6 +19,20 @@ const BetPlaceCard = () => {
         presets={presets}
         onSelectPreset={setQuantity}
         onPlaceBet={() => console.log('placing bet', quantity)}
+      />
+      <AutoBetControls
+        autoBetEnabled={autoBetEnabled}
+        onToggleAutoBet={() => setAutoBetEnabled((v) => !v)}
+        autoCashoutEnabled={autoCashoutEnabled}
+        onToggleAutoCashout={() => setAutoCashoutEnabled((v) => !v)}
+        multiplier={multiplier}
+        onIncreaseMultiplier={() => setMultiplier((m) => +(m + 0.1).toFixed(2))}
+        onDecreaseMultiplier={() =>
+          setMultiplier((m) => {
+            if (m <= 2.0) return m;
+            return +(m - 0.1).toFixed(2);
+          })
+        }
       />
     </div>
   )
