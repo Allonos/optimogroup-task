@@ -9,12 +9,23 @@
 .info-stat {
   min-width: 60px;
   max-width: 80px;
-  padding: 4.5px 4px;
   width: 100%;
-  border: 1px solid var(--stat-border-color);
+  padding: 4.5px 4px;
+  box-shadow: inset 0 0 0 1px var(--stat-border-color);
   background-color: var(--stat-bg-color);
   border-radius: 100px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.info-stat--sm {
+  padding: 4.5px 4px;
+}
+
+.info-stat--lg {
+  padding: 8.5px 4px;
 }
 
 .info-stat-value {

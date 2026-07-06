@@ -11,6 +11,7 @@
 @import "../styles/tabs/statsTab/StatsTab.css";
 @import "../styles/lists/gameInfoStatsList/GameInfoStatsList.css";
 @import "../styles/bars/defaultBar/DefaultBar.css";
+@import "../styles/headers/gameHeader/GameHeader.css";
 
 *,
 *::before,
@@ -37,6 +38,11 @@ body,
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.game-layout-children {
+  display: flex;
+  gap: 8px;
 }
 
 .text-body-small-semibold {

@@ -5,7 +5,7 @@ const GameLayout = ({ children }) => {
   return (
     <main className='game-layout'>
       <DefaultHeader />
-      <section>{children}</section>
+      <section className='game-layout-children'>{children}</section>
       <DefaultFooter />
     </main>
   );

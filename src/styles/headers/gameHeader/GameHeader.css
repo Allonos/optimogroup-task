@@ -1,0 +1,30 @@
+@import "../../../utils/ColorVariables.css";
+
+.game-header {
+  max-width: 1006px;
+  width: 100%;
+  overflow: hidden;
+  padding: 8px;
+  background-color: rgba(var(--bg-dark-2));
+  border-radius: 12px;
+}
+
+.game-header-track {
+  display: flex;
+  gap: 4px;
+  width: max-content;
+  animation: marquee-scroll 70s linear infinite;
+}
+
+.game-header:hover .game-header-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
