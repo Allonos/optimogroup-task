@@ -6,13 +6,14 @@ import GameInfoList from '@/components/ui/lists/gameInfoList/GameInfoList';
 import betList from '@/data/BET_LIST.json';
 import MyBetList from "@/data/MY_BETS_LIST.json";
 import BetsListFooter from '@/components/ui/footers/BetsListFooter';
-import StatsTabs from '@/components/ui/tabs/statsTabs/StatsTabs';
+import StatsTabs from '@/components/ui/tabs/statsTabs/components/StatsTabs';
 import GameInfoStatsList from '@/components/ui/lists/gameInfoStatsList';
+import StatsTab from '@/components/ui/tabs/statsTabs/StatsTab';
 
 
 const BetsListSection = () => {
   const [activeTab, setActiveTab] = useState('All Bets');
-  const [activeStatTab, setActiveStatTab] = useState("Stats")
+  const [activeStatTab, setActiveStatTab] = useState('Stats')
 
   const renderList = () => {
     switch (activeTab){
@@ -52,12 +53,7 @@ const BetsListSection = () => {
     case "Stats":
       return (
         <>
-          <div className='stats-list-header'>
-            <div className="stats-list-header-tabs">
-              <div className="separator" style={{ '--separator-color': "rgba(var(--line))" }} />
-            </div>
-          </div>
-          <GameInfoStatsList />
+          <StatsTab activeStatTab={activeStatTab} />
         </>
       )
     }
@@ -71,6 +67,7 @@ const BetsListSection = () => {
       <div className={`game-info-list ${activeTab !== "Stats" ? "no-scrollbar" : "custom-scroll"}`}>
         {renderList()}
       </div>
+      
       <BetsListFooter />
     </section>
   );

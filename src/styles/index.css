@@ -10,6 +10,7 @@
 @import "../styles/footer/defaultFooter/DefaultFooter.css";
 @import "../styles/tabs/statsTab/StatsTab.css";
 @import "../styles/lists/gameInfoStatsList/GameInfoStatsList.css";
+@import "../styles/bars/defaultBar/DefaultBar.css";
 
 *,
 *::before,

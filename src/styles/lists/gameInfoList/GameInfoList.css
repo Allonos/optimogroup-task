@@ -4,7 +4,7 @@
 .game-info-list {
   list-style: none;
   margin: 0;
-  padding: 0 0 64px;
+  padding: 0 0 80px;
   display: flex;
   flex-direction: column;
   gap: 1px;

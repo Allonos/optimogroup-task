@@ -2,6 +2,8 @@
   max-width: 410px;
   width: 100%;
   position: relative;
+  height: 670px;
+  overflow: hidden;
 }
 
 .stats-list-header {
@@ -46,4 +48,12 @@
 
 .bets-list-footer__item:last-child {
   text-align: right;
+}
+
+.chart-container {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
 }
