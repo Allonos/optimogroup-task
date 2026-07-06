@@ -64,7 +64,7 @@ const BetsListSection = () => {
       <BetsListTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       {activeTab !== "Stats" && activeTab !== "Leaderboard" && <GameInfoHeader />}
       {activeTab === "Stats" && <StatsTabs activeStatTab={activeStatTab} setActiveStatTab={setActiveStatTab} />}
-      <div className={`game-info-list ${activeTab !== "Stats" ? "no-scrollbar" : "custom-scroll"}`}>
+      <div className={`game-info-list ${activeTab !== "Stats" ? "no-scrollbar" : "custom-scroll game-info-list-stat"}`}>
         {renderList()}
       </div>
       
