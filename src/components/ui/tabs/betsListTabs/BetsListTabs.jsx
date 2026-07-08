@@ -1,9 +1,16 @@
 import { useState, useRef, useLayoutEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import DefaultTab from '../defaultTab/DefaultTab';
 
-const TABS = ['All Bets', 'My Bets', 'Leaderboard', 'Stats'];
+const TABS = [
+  { key: 'allBets', label: 'allBets' },
+  { key: 'myBets', label: 'myBets' },
+  { key: 'leaderboard', label: 'leaderboard' },
+  { key: 'stats', label: 'stats' },
+];
 
 const BetsListTabs = ({ activeTab, setActiveTab }) => {
+  const { t } = useTranslation();
   const tabRefs = useRef({});
   const containerRef = useRef(null);
   const [indicator, setIndicator] = useState({ x: 0, width: 0 });
@@ -32,8 +39,6 @@ const BetsListTabs = ({ activeTab, setActiveTab }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [activeTab, updateIndicator]);
 
-  const handleTabClick = (tab) => setActiveTab(tab);
-
   return (
     <div className='bets-list-tabs' ref={containerRef}>
       <div
@@ -43,13 +48,13 @@ const BetsListTabs = ({ activeTab, setActiveTab }) => {
           width: `${indicator.width}px`,
         }}
       />
-      {TABS.map((tab) => (
+      {TABS.map(({ key, label }) => (
         <DefaultTab
-          key={tab}
-          ref={(el) => (tabRefs.current[tab] = el)}
-          label={tab}
-          active={activeTab === tab}
-          onClick={() => handleTabClick(tab)}
+          key={key}
+          ref={(el) => (tabRefs.current[key] = el)}
+          label={t(label)}
+          active={activeTab === key}
+          onClick={() => setActiveTab(key)}
         />
       ))}
     </div>

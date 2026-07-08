@@ -1,8 +1,9 @@
 import GameInfoStatsList from '@/components/ui/lists/gameInfoStatsList';
-import { useState } from 'react';
 import StatsChart from '@/components/ui/tabs/statsTabs/components/StatsChart';
+import { useTranslation } from 'react-i18next';
 
 const StatsTab = ({ activeStatTab }) => {
+  const { t } = useTranslation();
   return (
     <>
       <div className='stats-list-header'>
@@ -11,8 +12,8 @@ const StatsTab = ({ activeStatTab }) => {
           style={{ '--separator-color': 'rgba(var(--line))' }}
         />
       </div>
-      {activeStatTab === "Stats" && <GameInfoStatsList />}
-      {activeStatTab === "Chart" && <StatsChart />}
+      {activeStatTab === 'stats' && <GameInfoStatsList />}
+      {activeStatTab === 'chart' && <StatsChart />}
     </>
   );
 };

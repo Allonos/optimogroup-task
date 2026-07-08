@@ -32,6 +32,23 @@
   line-height: 17px;
 }
 
+.header__lang-button {
+  padding: 5px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(var(--bg-dark-2));
+  background-color: rgba(var(--bg-dark-2));
+  color: rgba(var(--text-grey));
+  font-size: var(--body-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.header__lang-button:hover {
+  border-color: rgba(var(--border-white));
+  color: rgba(var(--text-white));
+}
+
 .header__menu-button {
   --icon-color: rgba(var(--icon-grey));
   padding: 9px;

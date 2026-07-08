@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 const BetsListFooter = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className='bets-list-footer'>
       <div className='bets-list-footer__item'>
         <span className='bets-list-footer__label text-body-small-semibold'>
-          Bets
+          {t('bets')}
         </span>
         <span className='bets-list-footer__value text-body-small-semibold'>
           25/80
@@ -11,7 +15,7 @@ const BetsListFooter = () => {
       </div>
       <div className='bets-list-footer__item'>
         <span className='bets-list-footer__label text-body-small-semibold'>
-          Total Bets
+          {t('totalBets')}
         </span>
         <span className='bets-list-footer__value text-body-small-semibold'>
           125.50 USD
@@ -19,7 +23,7 @@ const BetsListFooter = () => {
       </div>
       <div className='bets-list-footer__item'>
         <span className='bets-list-footer__label text-body-small-semibold'>
-          Total Win
+          {t('totalWin')}
         </span>
         <span className='bets-list-footer__value text-body-small-semibold'>
           1.436.24 USD

@@ -26,3 +26,7 @@
 .menu-modal__item.active span {
   color: rgba(var(--text-white));
 }
+
+.menu-modal__item.plain {
+  cursor: pointer;
+}

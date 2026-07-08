@@ -6,7 +6,7 @@ const StatsChart = () => {
   return (
     <div className='chart-container'>
       {STATS_CHART.map((stat) => (
-        <React.Fragment key={stat.key}>
+        <React.Fragment key={stat.id}>
           <DefaultBar bet={stat.bet} percentage={stat.percentage} />
         </React.Fragment>
       ))}

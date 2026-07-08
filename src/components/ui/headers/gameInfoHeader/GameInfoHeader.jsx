@@ -1,10 +1,14 @@
-const gameInfoHeaders = [
-  { id: 1, title: 'Player' },
-  { id: 2, title: 'Bet(USD)' },
-  { id: 3, title: 'Cashout (USD)' },
-];
+import { useTranslation } from 'react-i18next';
 
 const GameInfoHeader = () => {
+  const { t } = useTranslation();
+
+  const gameInfoHeaders = [
+    { id: 1, title: t('player') },
+    { id: 2, title: t('betUsd') },
+    { id: 3, title: t('cashoutUsd') },
+  ];
+
   return (
     <div className='game-info-header'>
       {gameInfoHeaders.map((header) => (
