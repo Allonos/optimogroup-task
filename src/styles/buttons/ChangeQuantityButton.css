@@ -10,4 +10,9 @@
   border-radius: 34px;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.change-quantity:hover {
+  background-color: rgba(var(--button-grey-2));
 }

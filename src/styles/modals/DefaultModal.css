@@ -1,0 +1,38 @@
+@import "../../utils/ColorVariables.css";
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  min-height: 100px;
+  border-radius: 12px;
+  background-color: rgba(var(--bg-dark-2));
+  z-index: 11;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal--open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}

@@ -15,6 +15,8 @@
 @import "../styles/buttons/ChangeQuantityButton.css";
 @import "../styles/cards/BetPlaceCard.css";
 @import "../styles/switches/DefaultSwitch.css";
+@import "../styles/modals/DefaultModal.css";
+@import "../styles/modals/menuModal/MenuModal.css";
 
 *,
 *::before,

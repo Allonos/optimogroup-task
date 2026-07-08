@@ -33,6 +33,7 @@
 }
 
 .header__menu-button {
+  --icon-color: rgba(var(--icon-grey));
   padding: 9px;
   border-radius: 100px;
   border: 1px solid rgba(var(--bg-dark-2));
@@ -44,6 +45,17 @@
   transition: border-color 0.3s ease-in-out;
 }
 
-.header__menu-button:hover {
+.header__menu-wrapper {
+  position: relative;
+}
+
+.header__menu-button:hover,
+.header__menu-button.active {
   border-color: rgba(var(--border-white));
+  --icon-color: rgba(var(--icon-white));
+}
+
+.header__menu-button:hover .icon,
+.header__menu-button.active .icon {
+  --icon-color: rgba(var(--icon-white));
 }

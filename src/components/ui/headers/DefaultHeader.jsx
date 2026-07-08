@@ -1,6 +1,11 @@
-import { MenuIcon } from '@/assets/icons/SvgTojsx';
+import { useState } from 'react';
+import { MenuIcon, CloseIcon } from '@/assets/icons/SvgTojsx';
+import DefaultModal from '@/components/ui/modals/DefaultModal';
+import MenuModal from '../modals/menuModal/MenuModal';
 
 const DefaultHeader = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className='header'>
       <div />
@@ -11,12 +16,20 @@ const DefaultHeader = () => {
           </p>
           <p className='header__balance-value'>452.20 USD</p>
         </div>
-        <button className='header__menu-button'>
-          <MenuIcon
-            className='icon'
-            style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
-          />
-        </button>
+
+        <div className='header__menu-wrapper'>
+          <button
+            className={`header__menu-button${isMenuOpen ? ' active' : ''}`}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            {isMenuOpen ? (
+              <CloseIcon className='icon' />
+            ) : (
+              <MenuIcon className='icon' />
+            )}
+          </button>
+          <MenuModal isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        </div>
       </div>
     </header>
   );
