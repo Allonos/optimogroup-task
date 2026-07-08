@@ -1,23 +1,51 @@
 @import "../../../utils/ColorVariables.css";
 
 .game-header {
-  padding: 8px;
+  padding: 12px 8px;
   background-color: rgba(var(--bg-dark-2));
   border-radius: 12px;
+  position: relative;
 }
 
 .game-header-track {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
-  width: max-content;
-  animation: marquee-scroll 70s linear infinite;
+  overflow: hidden;
+  height: 24px;
+  padding-right: 32px;
+  align-content: flex-start;
+  transition: height 0.3s ease;
+  max-height: 350px;
 }
 
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.game-header--open .game-header-track {
+  height: var(--expanded-height, 350px);
+}
+
+.game-header-track-item {
+  flex-shrink: 0;
+}
+
+.game-header-arrow {
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.game-header-arrow svg {
+  transition: transform 0.2s ease;
+}
+
+.game-header-arrow--open svg {
+  transform: rotate(180deg);
 }

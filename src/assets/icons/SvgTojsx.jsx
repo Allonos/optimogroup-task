@@ -14,3 +14,4 @@ export { default as InfoIcon } from './Info.svg?react';
 export { default as MusicIcon } from './Music.svg?react';
 export { default as SoundIcon } from './Sound.svg?react';
 export { default as TicketIcon } from './Ticket.svg?react';
+export { default as ArrowIcon } from './Arrow.svg?react';
