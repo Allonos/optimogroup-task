@@ -2,7 +2,6 @@
 @import "../../../utils/FontSizeVariables.css";
 
 .game-info-list {
-  padding: 0 0 150px;
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -10,10 +9,18 @@
   overflow-y: auto;
   position: relative;
   z-index: 1;
+  max-height: 655px;
 }
 
 .game-info-list-stat {
-  padding: 0 0 165px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  max-height: 590px;
 }
 
 .game-info-list-item {

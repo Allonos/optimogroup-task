@@ -17,6 +17,7 @@
 @import "../styles/switches/DefaultSwitch.css";
 @import "../styles/modals/DefaultModal.css";
 @import "../styles/modals/menuModal/MenuModal.css";
+@import "../styles/footer/betsStatsFooter/BetsStatsFooter.css";
 
 *,
 *::before,
@@ -71,9 +72,11 @@ body,
   gap: 8px;
 }
 
-.game-img {
+.background-img {
   width: 100%;
   height: 100%;
+  max-width: 1006px;
+  max-height: 514px;
   object-fit: cover;
   border-radius: 12px;
 }

@@ -9,6 +9,7 @@ import MyBetList from "@/data/MY_BETS_LIST.json";
 import BetsListFooter from '@/components/ui/footers/BetsListFooter';
 import StatsTabs from '@/components/ui/tabs/statsTabs/components/StatsTabs';
 import StatsTab from '@/components/ui/tabs/statsTabs/StatsTab';
+import BetsStatsFooter from '@/components/ui/footers/BetsStatsFooter';
 
 
 const BetsListSection = () => {
@@ -58,15 +59,18 @@ const BetsListSection = () => {
   return (
     <section className='bets-list-tabs-container'>
       <BetsListTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-      {activeTab !== 'stats' && activeTab !== 'leaderboard' && <GameInfoHeader />}
+      {activeTab !== 'stats' && <GameInfoHeader />}
       {activeTab === 'stats' && (
         <StatsTabs activeStatTab={activeStatTab} setActiveStatTab={setActiveStatTab} />
       )}
-      <div className={`game-info-list ${activeTab !== 'stats' ? 'no-scrollbar' : 'custom-scroll game-info-list-stat'}`}>
+      <div className={` ${activeTab !== 'stats' ? 'game-info-list no-scrollbar' : 'custom-scroll game-info-list-stat'}`}>
         {renderList()}
       </div>
 
-      <BetsListFooter />
+      {activeTab === "stats" && (
+        <BetsStatsFooter />
+      )}
+      {/* <BetsListFooter /> */}
     </section>
   );
 };

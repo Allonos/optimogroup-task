@@ -1,0 +1,44 @@
+@import "../../../utils/FontSizeVariables.css";
+@import "../../../utils/ColorVariables.css";
+
+.bets-stats-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  padding: 14px 16px 0 16px;
+  border-top: 1px solid rgba(var(--line));
+}
+
+.bets-stats-footer > span {
+  font-size: var(--body-small);
+  line-height: 15px;
+  color: rgba(var(--text-white));
+  font-weight: 500;
+}
+
+.bets-stats-footer__rounds {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.label-rounds {
+  padding: 4.5px 12.5px;
+  border-radius: 16px;
+  background: rgba(var(--bg-dark-2));
+  border: none;
+  cursor: pointer;
+}
+
+.label-rounds--active {
+  background: linear-gradient(to right, rgba(var(--purple-background-light)) 0%, rgba(var(--purple-background-dark)) 100%);
+}
+
+.label-rounds span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  color: rgba(var(--text-white));
+}

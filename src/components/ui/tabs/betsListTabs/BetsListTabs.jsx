@@ -5,7 +5,6 @@ import DefaultTab from '../defaultTab/DefaultTab';
 const TABS = [
   { key: 'allBets', label: 'allBets' },
   { key: 'myBets', label: 'myBets' },
-  { key: 'leaderboard', label: 'leaderboard' },
   { key: 'stats', label: 'stats' },
 ];
 
