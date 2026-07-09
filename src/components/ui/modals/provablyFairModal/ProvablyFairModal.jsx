@@ -5,7 +5,7 @@ import ProvablyFairInstructions from '@/components/ui/modals/provablyFairModal/c
 import RoundStateTable from '@/components/ui/modals/provablyFairModal/components/RoundStateTable';
 import InfoBlock from '@/components/ui/modals/provablyFairModal/components/InfoBlock';
 import ProvablyFairParameters from '@/components/ui/modals/provablyFairModal/components/ProvablyFairParameters';
-import { CloseIcon } from '@/assets/icons/SvgTojsx';
+import ModalHeader from '@/components/ui/headers/modalheader/Modalheader';
 
 const BEFORE_VALUES = ['1', 'hidden', 'Hidden', '8f3a2b9c7d1e…'];
 const AFTER_VALUES = ['1', '7k9mX2pQ4nR8wL…', '2.45x', '8f3a2b9c7d1e…'];
@@ -46,16 +46,7 @@ const ProvablyFairModal = ({ isOpen, onClose }) => {
         zIndex: 100,
       }}
     >
-      <div className='provably__modal__header'>
-        <h2 className='modal__title'>{t('provablyFair')}</h2>
-        <button>
-          <CloseIcon
-            onClick={onClose}
-            className='icon'
-            style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
-          />
-        </button>
-      </div>
+      <ModalHeader title={t('provablyFair')} onClose={onClose} />
       <section className='provably__fair__modal__content'>
         <div className='modal__content'>
           <ProvablyFairInstructions />

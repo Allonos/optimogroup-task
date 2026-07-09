@@ -1,0 +1,25 @@
+.limits__modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.limits__modal__subtitle {
+  font-size: var(--body-lg);
+  line-height: 24px;
+  font-weight: 700;
+  color: rgba(var(--text-white));
+}
+
+.limits__modal__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+}
+
+.limits__modal__text {
+  font-size: var(--body);
+  line-height: 21px;
+  font-weight: 500;
+  color: rgba(var(--text-grey));
+}

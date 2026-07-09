@@ -50,5 +50,9 @@
   "cryptographicHash": "A cryptographic hash that proves the round outcome was predetermined",
   "randomServerKey": "The random server-generated key",
   "multiplierWhereRoundEnded": "The multiplier where the round ended",
-  "remainsTheSame": "Remains the same, proving nothing changed"
+  "remainsTheSame": "Remains the same, proving nothing changed",
+  "maximumWin": "Maximum Win",
+  "maximumWinText": "The highest possible multiplier is 25,000x your bet. This is the absolute ceiling—even if the game continues beyond this point (theoretically), your payout caps at 25,000x.",
+  "maximumCashOut": "Maximum Cash Out (Free Bets Only)",
+  "maximumCashOutText": "When playing with free bets, a minimum cash-out multiplier applies (typically 1.50x, but configurable). You cannot cash out below this threshold when using promotional free bets."
 }

@@ -1,11 +1,40 @@
-import DefaultModal from '../DefaultModal'
+import { useTranslation } from 'react-i18next';
+
+import ModalHeader from '@/components/ui/headers/modalheader/Modalheader';
+import DefaultModal from '@/components/ui/modals/DefaultModal';
 
 const LimitsModal = ({ isOpen, onClose }) => {
-  return (
-    <DefaultModal isOpen={isOpen} onClose={onClose} className="modal--centered">
-      <p>LimitsModal</p>
-    </DefaultModal>
-  )
-}
+  const { t } = useTranslation();
 
-export default LimitsModal
+  return (
+    <DefaultModal
+      isOpen={isOpen}
+      onClose={onClose}
+      className='modal--centered'
+      style={{
+        maxWidth: 768,
+        width: '100%',
+        maxHeight: 581,
+        overflowY: 'auto',
+        borderRadius: 16,
+        padding: 24,
+        border: '1px solid rgba(var(--line))',
+        zIndex: 100,
+      }}
+    >
+      <ModalHeader title='Limits' onClose={onClose} />
+      <div className='limits__modal__content'>
+        <section className='limits__modal__section'>
+          <h2 className='limits__modal__subtitle'>{t('maximumWin')}</h2>
+          <p className='limits__modal__text'>{t('maximumWinText')}</p>
+        </section>
+        <section className='limits__modal__section'>
+          <h2 className='limits__modal__subtitle'>{t('maximumCashOut')}</h2>
+          <p className='limits__modal__text'>{t('maximumCashOutText')}</p>
+        </section>
+      </div>
+    </DefaultModal>
+  );
+};
+
+export default LimitsModal;
