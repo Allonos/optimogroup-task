@@ -18,6 +18,7 @@
 @import "../styles/modals/DefaultModal.css";
 @import "../styles/modals/menuModal/MenuModal.css";
 @import "../styles/footer/betsStatsFooter/BetsStatsFooter.css";
+@import "../styles/modals/provablyFairModal/ProvablyFairModal.css";
 
 *,
 *::before,

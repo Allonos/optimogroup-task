@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MenuIcon, CloseIcon } from '@/assets/icons/SvgTojsx';
 import MenuModal from '../modals/menuModal/MenuModal';
+import ProvablyFairModal from '../modals/provablyFairModal/ProvablyFairModal';
 
 const DefaultHeader = () => {
   const { t } = useTranslation();

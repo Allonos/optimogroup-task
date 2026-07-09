@@ -16,9 +16,6 @@
 }
 
 .modal {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
   min-width: 200px;
   min-height: 100px;
   border-radius: 12px;
@@ -29,6 +26,23 @@
   pointer-events: none;
   transform: translateY(-8px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal--anchored {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+}
+
+.modal--centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal--centered.modal--open {
+  transform: translate(-50%, -50%);
 }
 
 .modal--open {

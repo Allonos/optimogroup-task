@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import DefaultModal from '@/components/ui/modals/DefaultModal'
+import ProvablyFairModal from '@/components/ui/modals/provablyFairModal/ProvablyFairModal'
+import HowToPlayModal from '@/components/ui/modals/howToPlayModal/HowToPlayModal'
+import FreeBetModal from '@/components/ui/modals/freeBetModal/FreeBetModal'
+import LimitsModal from '@/components/ui/modals/limitsModal/LimitsModal'
 import { MusicIcon, SoundIcon, AnimationIcon, CheckIcon, InfoIcon, TicketIcon, CoinIcon, ChatIcon } from '@/assets/icons/SvgTojsx'
 import DefaultSwitch from '@/components/ui/switches/DefaultSwitch'
 
@@ -23,34 +27,48 @@ const MenuModal = ({ isMenuOpen, setIsMenuOpen }) => {
   const [toggles, setToggles] = useState(
     Object.fromEntries(TOGGLE_ITEMS.map(({ key, defaultValue }) => [key, defaultValue]))
   )
+  const [activeModal, setActiveModal] = useState(null)
 
   const toggle = (key) => setToggles((prev) => ({ ...prev, [key]: !prev[key] }))
+  const closeActiveModal = () => setActiveModal(null)
 
   return (
-    <DefaultModal
-      isOpen={isMenuOpen}
-      onClose={() => setIsMenuOpen(false)}
-      style={{ width: 238, borderRadius: 12, border: '1px solid rgba(var(--line))', padding: '16px 20px', display: 'flex', flexDirection: 'column', gap: 16 }}
-    >
-      {TOGGLE_ITEMS.map(({ key, label, Icon }) => (
-        <div className='menu-modal__item-wrapper' key={key}>
-          <div className={`menu-modal__item${toggles[key] ? ' active' : ''}`}>
-            <Icon className='icon' style={{ '--icon-color': toggles[key] ? 'rgba(var(--text-white))' : 'rgba(var(--text-grey))' }} />
-            <span>{t(label)}</span>
+    <>
+      <DefaultModal
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        className="modal--anchored"
+        style={{ width: 238, borderRadius: 12, border: '1px solid rgba(var(--line))', padding: '16px 20px', display: 'flex', flexDirection: 'column', gap: 16 }}
+      >
+        {TOGGLE_ITEMS.map(({ key, label, Icon }) => (
+          <div className='menu-modal__item-wrapper' key={key}>
+            <div className={`menu-modal__item${toggles[key] ? ' active' : ''}`}>
+              <Icon className='icon' style={{ '--icon-color': toggles[key] ? 'rgba(var(--text-white))' : 'rgba(var(--text-grey))' }} />
+              <span>{t(label)}</span>
+            </div>
+            <DefaultSwitch defaultChecked={toggles[key]} onChange={() => toggle(key)} />
           </div>
-          <DefaultSwitch defaultChecked={toggles[key]} onChange={() => toggle(key)} />
-        </div>
-      ))}
+        ))}
 
-      {PLAIN_ITEMS.map(({ key, label, Icon }) => (
-        <div className='menu-modal__item-wrapper' key={key}>
-          <div className='menu-modal__item plain'>
-            <Icon className='icon' style={{ '--icon-color': 'rgba(var(--text-grey))' }} />
-            <span>{t(label)}</span>
+        {PLAIN_ITEMS.map(({ key, label, Icon }) => (
+          <div className='menu-modal__item-wrapper' key={key}>
+            <div
+              className='menu-modal__item plain'
+              onClick={key !== 'chat' ? () => setActiveModal(key) : undefined}
+              style={key !== 'chat' ? { cursor: 'pointer' } : undefined}
+            >
+              <Icon className='icon' style={{ '--icon-color': 'rgba(var(--text-grey))' }} />
+              <span>{t(label)}</span>
+            </div>
           </div>
-        </div>
-      ))}
-    </DefaultModal>
+        ))}
+      </DefaultModal>
+
+      <ProvablyFairModal isOpen={activeModal === 'fair'} onClose={closeActiveModal} />
+      <HowToPlayModal isOpen={activeModal === 'howToPlay'} onClose={closeActiveModal} />
+      <FreeBetModal isOpen={activeModal === 'freeBet'} onClose={closeActiveModal} />
+      <LimitsModal isOpen={activeModal === 'limits'} onClose={closeActiveModal} />
+    </>
   )
 }
 

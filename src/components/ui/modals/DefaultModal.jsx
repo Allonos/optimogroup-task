@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import '@/styles/modals/DefaultModal.css';
 
-const DefaultModal = ({ isOpen, onClose, style, children }) => {
+const DefaultModal = ({ isOpen, onClose, className = '', style, children }) => {
   return (
     <>
       {createPortal(
@@ -11,7 +11,10 @@ const DefaultModal = ({ isOpen, onClose, style, children }) => {
         />,
         document.body,
       )}
-      <div className={`modal${isOpen ? ' modal--open' : ''}`} style={style}>
+      <div
+        className={`modal${isOpen ? ' modal--open' : ''}${className ? ` ${className}` : ''}`}
+        style={style}
+      >
         {children}
       </div>
     </>
