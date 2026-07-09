@@ -1,0 +1,19 @@
+@import "../../../utils/ColorVariables.css";
+
+.modal__header {
+  position: sticky;
+  top: -24px;
+  margin: -24px -24px 16px;
+  padding: 24px 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(var(--bg-dark-2));
+  z-index: 1;
+}
+
+.modal__header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

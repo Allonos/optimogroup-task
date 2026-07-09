@@ -14,8 +14,6 @@ const LimitsModal = ({ isOpen, onClose }) => {
       style={{
         maxWidth: 768,
         width: '100%',
-        maxHeight: 581,
-        overflowY: 'auto',
         borderRadius: 16,
         padding: 24,
         border: '1px solid rgba(var(--line))',
