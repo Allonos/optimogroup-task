@@ -1,55 +1,84 @@
-import React, { useEffect } from 'react'
-import DefaultModal from '../DefaultModal'
-import ProvablyFairInstructions from './ProvablyFairInstructions'
-import RoundStateTable from './RoundStateTable'
-import InfoBlock from './InfoBlock'
-import ProvablyFairParameters from './ProvablyFairParameters'
+import { useTranslation } from 'react-i18next';
 
-const BEFORE_VALUES = ['1', 'hidden', 'Hidden', '8f3a2b9c7d1e…']
-const AFTER_VALUES = ['1', '7k9mX2pQ4nR8wL…', '2.45x', '8f3a2b9c7d1e…']
+import DefaultModal from '@/components/ui/modals/DefaultModal';
+import ProvablyFairInstructions from '@/components/ui/modals/provablyFairModal/components/ProvablyFairInstructions';
+import RoundStateTable from '@/components/ui/modals/provablyFairModal/components/RoundStateTable';
+import InfoBlock from '@/components/ui/modals/provablyFairModal/components/InfoBlock';
+import ProvablyFairParameters from '@/components/ui/modals/provablyFairModal/components/ProvablyFairParameters';
+import { CloseIcon } from '@/assets/icons/SvgTojsx';
+
+const BEFORE_VALUES = ['1', 'hidden', 'Hidden', '8f3a2b9c7d1e…'];
+const AFTER_VALUES = ['1', '7k9mX2pQ4nR8wL…', '2.45x', '8f3a2b9c7d1e…'];
 
 const BEFORE_ITEMS = [
-  { label: 'Round Number', desc: 'The current round identifier' },
-  { label: 'Provably Fair Hash', desc: 'A cryptographic hash that proves the round outcome was predetermined' },
-]
+  { label: 'roundNumber', desc: 'currentRoundIdentifier' },
+  {
+    label: 'provablyFairHash',
+    desc: 'cryptographicHash',
+  },
+];
 
 const AFTER_ITEMS = [
-  { label: 'Server Key', desc: 'The random server-generated key' },
-  { label: 'Crash Point', desc: 'The multiplier where the round ended' },
-  { label: 'Provably Fair Hash', desc: 'Remains the same, proving nothing changed' },
-]
+  { label: 'randomServerKey', desc: 'randomServerKey' },
+  { label: 'crashPoint', desc: 'multiplierWhereRoundEnded' },
+  {
+    label: 'provablyFairHash',
+    desc: 'remainsTheSame',
+  },
+];
 
 const ProvablyFairModal = ({ isOpen, onClose }) => {
-  useEffect(() => {
-    if (!isOpen) return
-    const header = document.querySelector('header')
-    if (!header) return
-    header.addEventListener('click', onClose)
-    return () => header.removeEventListener('click', onClose)
-  }, [isOpen, onClose])
+  const { t } = useTranslation();
+
   return (
-    <DefaultModal isOpen={isOpen} onClose={onClose} className="modal--centered no-scrollbar" style={{ maxWidth: 1006, width: "100%", maxHeight: 581, overflowY: "auto", borderRadius: 16, padding: 24, border: '1px solid rgba(var(--line))', zIndex: 100 }}>
-      <section className="provably__fair__modal__content">
-        <h2 className="modal__title">Provably Fair</h2>
-        <div className="modal__content">
-          <ProvablyFairInstructions />
-          <RoundStateTable title="Before the Round Starts (Hidden State)" values={BEFORE_VALUES} />
-          <InfoBlock
-            intro="Before the game begins, players can see:"
-            items={BEFORE_ITEMS}
-            footer="The Server Key and Crash Point remain hidden to ensure fairness."
+    <DefaultModal
+      isOpen={isOpen}
+      onClose={onClose}
+      className='modal--centered no-scrollbar'
+      style={{
+        maxWidth: 1006,
+        width: '100%',
+        maxHeight: 581,
+        overflowY: 'auto',
+        borderRadius: 16,
+        padding: 24,
+        border: '1px solid rgba(var(--line))',
+        zIndex: 100,
+      }}
+    >
+      <div className='provably__modal__header'>
+        <h2 className='modal__title'>{t('provablyFair')}</h2>
+        <button>
+          <CloseIcon
+            onClick={onClose}
+            className='icon'
+            style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
           />
-          <RoundStateTable title="After the Round Ends (Revealed State)" values={AFTER_VALUES} />
+        </button>
+      </div>
+      <section className='provably__fair__modal__content'>
+        <div className='modal__content'>
+          <ProvablyFairInstructions />
+          <RoundStateTable
+            title={t('beforeRoundStarts')}
+            values={BEFORE_VALUES}
+          />
           <InfoBlock
-            intro="Once the round completes, all parameters are revealed:"
+            intro={t('beforeGameBegins')}
+            items={BEFORE_ITEMS}
+            footer={t('beforeGameBeginsFooter')}
+          />
+          <RoundStateTable title={t('afterRoundEnds')} values={AFTER_VALUES} />
+          <InfoBlock
+            intro={t('onceTheRoundEnds')}
             items={AFTER_ITEMS}
-            footer="The Server Key and Crash Point remain hidden to ensure fairness."
+            footer={t('onceTheRoundEndsFooter')}
           />
           <ProvablyFairParameters />
         </div>
       </section>
     </DefaultModal>
-  )
-}
+  );
+};
 
-export default ProvablyFairModal
+export default ProvablyFairModal;
