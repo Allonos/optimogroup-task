@@ -179,3 +179,66 @@
   font-weight: 700;
   color: rgba(var(--text-subtitle));
 }
+
+.placing-bets-img {
+  max-width: 720px;
+  max-height: 111px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgba(var(--line));
+  border-radius: 12px;
+}
+
+.how-to-play__modal__subsection-auto-bet {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 16px 16px 20px;
+  background-color: rgba(var(--bg-dark-3));
+  max-width: 135px;
+  border-radius: 12px;
+}
+
+.how-to-play__modal__subsection-auto-bet span {
+  font-size: var(--body-small);
+  line-height: 15px;
+  font-weight: 600;
+  color: rgba(var(--text-white))
+}
+
+.how-to-play__modal__subsection-auto-cash-out {
+  max-width: 342px;
+  max-height: 274px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.how-to-play__modal__subsection-auto-cash-out img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgba(var(--line));
+  border-radius: 12px;
+}
+
+.how-to-play__modal__subsection-charts-view {
+  max-width: 294px;
+  max-height: 537px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.charts-view-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgba(var(--line));
+  border-radius: 12px;
+}
+
+.advanced-features-text {
+  margin-top: 5px;
+}

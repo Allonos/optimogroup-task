@@ -1,11 +1,18 @@
 import { useTranslation } from 'react-i18next';
+
 import DefaultModal from '@/components/ui/modals/DefaultModal';
 import ModalHeader from '@/components/ui/headers/modalheader/ModalHeader';
 import HowToPlaySection from './components/HowToPlaySection';
-import betsImg from '@/assets/webp/bets.webp';
-import homePageImg from '@/assets/webp/homePage.webp';
 import HowToPlayExample from '@/components/ui/modals/howToPlayModal/components/HowToPlayExample';
 import RecentMultipliers from '@/components/ui/modals/howToPlayModal/components/RecentMultipliers';
+import DefaultSwitch from '@/components/ui/switches/DefaultSwitch';
+import AdvancedFeaturesSection from '@/components/ui/modals/howToPlayModal/components/AdvancedFeaturesSection';
+import GameInterfaceSection from '@/components/ui/modals/howToPlayModal/components/GameInterfaceSection';
+import AdvancedFeaturesListSection from '@/components/ui/modals/howToPlayModal/components/AdvancedFeaturesListSection';
+
+import betsImg from '@/assets/webp/bets.webp';
+import homePageImg from '@/assets/webp/homePage.webp';
+
 
 const PLACING_BETS_STEPS = [
   { highlight: 'placingBetsStep1Highlight', after: 'placingBetsStep1After' },
@@ -28,6 +35,7 @@ const EXAMPLE_STEPS = [
   { before: 'youCashOutAt', highlight: 'youCashOutAtHighlight' },
   { before: 'youWin', highlight: "youWinHighlight" },
 ];
+
 
 const HowToPlayModal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
@@ -66,16 +74,10 @@ const HowToPlayModal = ({ isOpen, onClose }) => {
         </div>
         <RecentMultipliers />
 
-        <div className='how-to-play__modal__subsection'>
-          <h3 className="how-to-play__modal__subsection-title">Balance Display</h3>
-           <p className='how-to-play__modal__subsection-text'>
-            Top-right live balance display showing your available funds.
-          </p>
-          <div className='how-to-play__balance-display'>
-            <span className="how-to-play__balance-display-label">{t("balance")}</span>
-            <span className="how-to-play__balance-display-value">2,439.49 USD</span>
-          </div>
-        </div>
+        <GameInterfaceSection />
+        <AdvancedFeaturesSection />     
+        <AdvancedFeaturesListSection />
+        
       </section>
     </DefaultModal>
   );
