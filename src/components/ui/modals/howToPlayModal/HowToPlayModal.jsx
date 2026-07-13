@@ -10,32 +10,10 @@ import AdvancedFeaturesSection from '@/components/ui/modals/howToPlayModal/compo
 import GameInterfaceSection from '@/components/ui/modals/howToPlayModal/components/GameInterfaceSection';
 import AdvancedFeaturesListSection from '@/components/ui/modals/howToPlayModal/components/AdvancedFeaturesListSection';
 
+import { PLACING_BETS_STEPS, CASHING_OUT_STEPS, EXAMPLE_STEPS } from '@/utils/constants/howToPlayConstants';
+
 import betsImg from '@/assets/webp/bets.webp';
 import homePageImg from '@/assets/webp/homePage.webp';
-
-
-const PLACING_BETS_STEPS = [
-  { highlight: 'placingBetsStep1Highlight', after: 'placingBetsStep1After' },
-  { before: 'placingBetsStep2Before', highlight: 'placingBetsStep2Highlight', after: 'placingBetsStep2After' },
-  { before: 'placingBetsStep3Before', highlight: 'placingBetsStep3Highlight', after: 'placingBetsStep3After' },
-  { highlight: 'placingBetsStep4Highlight', after: 'placingBetsStep4After' },
-  { before: 'placingBetsStep5Before', highlight: 'placingBetsStep5Highlight', after: 'placingBetsStep5After' },
-];
-
-const CASHING_OUT_STEPS = [
-  { before: 'cashingOutStep1Before', highlight: 'cashingOutStep1Highlight', after: 'cashingOutStep1After' },
-  { before: 'cashingOutStep2Before', highlight: 'cashingOutStep2Highlight' },
-  { text: 'cashingOutStep3' },
-  { before: 'cashingOutStep4Before', highlight: 'cashingOutStep4Highlight' },
-  { text: 'cashingOutStep5' },
-];
-
-const EXAMPLE_STEPS = [
-  { before: 'youBet', highlight: 'youBetHighlight' },
-  { before: 'youCashOutAt', highlight: 'youCashOutAtHighlight' },
-  { before: 'youWin', highlight: "youWinHighlight" },
-];
-
 
 const HowToPlayModal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();

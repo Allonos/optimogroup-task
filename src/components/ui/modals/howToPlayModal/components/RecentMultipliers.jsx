@@ -1,15 +1,18 @@
+import { useTranslation } from 'react-i18next';
+
 const RecentMultipliers = () => {
+  const { t } = useTranslation();
+
   return (
     <div className='how-to-play__modal__subsection'>
       <h3 className='how-to-play__modal__section-title'>
-        Game Interface Components
+        {t('recentMultipliersSectionTitle')}
       </h3>
       <h4 className='how-to-play__modal__subsection-title'>
-        Top Banner - Recent Multipliers
+        {t('recentMultipliersTitle')}
       </h4>
       <p className='how-to-play__modal__subsection-text'>
-        Shows the last exploded comet multipliers. Use this history to observe
-        trends and guess when the next crash may occur.
+        {t('recentMultipliersText')}
       </p>
       <div className='how-to-play__bet_example'>
         <div className='how-to-play__bet_example__multiplier'>
@@ -20,7 +23,9 @@ const RecentMultipliers = () => {
               backgroundColor: 'rgba(var(--stat-low-bg))',
             }}
           />
-          <span className='how-to-play__multiplier-text'>1.00 - 2.00x</span>
+          <span className='how-to-play__multiplier-text'>
+            {t('recentMultipliersRangeLow')}
+          </span>
         </div>
         <div className='how-to-play__bet_example__multiplier'>
           <div
@@ -30,7 +35,9 @@ const RecentMultipliers = () => {
               backgroundColor: 'rgba(var(--stat-medium-bg))',
             }}
           />
-          <span className='how-to-play__multiplier-text'>2.00 - 10.00x</span>
+          <span className='how-to-play__multiplier-text'>
+            {t('recentMultipliersRangeMedium')}
+          </span>
         </div>
         <div className='how-to-play__bet_example__multiplier'>
           <div
@@ -40,7 +47,9 @@ const RecentMultipliers = () => {
               backgroundColor: 'rgba(var(--stat-high-bg))',
             }}
           />
-          <span className='how-to-play__multiplier-text'>10.00 - 50.00x</span>
+          <span className='how-to-play__multiplier-text'>
+            {t('recentMultipliersRangeHigh')}
+          </span>
         </div>
         <div className='how-to-play__bet_example__multiplier'>
           <div
@@ -50,7 +59,9 @@ const RecentMultipliers = () => {
               backgroundColor: 'rgba(var(--stat-very-high-bg))',
             }}
           />
-          <span className='how-to-play__multiplier-text'>50.00 - 100.00x</span>
+          <span className='how-to-play__multiplier-text'>
+            {t('recentMultipliersRangeVeryHigh')}
+          </span>
         </div>
         <div className='how-to-play__bet_example__multiplier'>
           <div
@@ -60,7 +71,9 @@ const RecentMultipliers = () => {
               backgroundColor: 'rgba(var(--stat-ultra-bg))',
             }}
           />
-          <span className='how-to-play__multiplier-text'>100.00x-25000x</span>
+          <span className='how-to-play__multiplier-text'>
+            {t('recentMultipliersRangeUltra')}
+          </span>
         </div>
       </div>
     </div>

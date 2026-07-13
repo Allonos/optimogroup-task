@@ -1,82 +1,84 @@
+import { useTranslation } from 'react-i18next';
+
 import HowToPlayExample from '@/components/ui/modals/howToPlayModal/components/HowToPlayExample';
+import { ROUND_BETS_STEPS, HISTORY_STEPS } from '@/utils/constants/howToPlayConstants';
 
 import chartsViewImg from '@/assets/webp/chartsView.webp';
 import listViewImg from '@/assets/webp/listView.webp';
 import liveBetsImg from '@/assets/webp/liveBets.webp';
 import historyImg from '@/assets/webp/history.webp';
 
-const ROUND_BETS_STEPS = [
-  { before: 'Active players' },
-  { before: 'Bet amounts' },
-  { before: 'Cash-out multipliers' },
-  { before: 'Who cashed out and who is still riding the comet' }
-]
-
-const HISTORY_STEPS = [
-  { highlight: 'Bet Amount: ', after: 'How much you wagered' },
-  { highlight: 'Multiplier: ', after: 'What multiplier you cashed out at (or crash point if you lost)' },
-  { highlight: 'Result: ', after: 'Win or loss' },
-  { highlight: 'Payout: ', after: 'Total amount won' },
-  { highlight: 'Profit/Loss: ', after: 'Net result of each bet' },
-  { highlight: 'Timestamp: ', after: 'When each bet was placed' },
-  { highlight: 'Round ID: ', after: 'Reference number for each game round' },
-]
 
 const AdvancedFeaturesListSection = () => {
+  const { t } = useTranslation();
+
   return (
     <div className='how-to-play__modal__subsection'>
-      <h3 className='how-to-play__modal__section-title'>Advanced Features</h3>
+      <h3 className='how-to-play__modal__section-title'>
+        {t('advancedFeatures')}
+      </h3>
       <h4 className='how-to-play__modal__subsection-title'>
-        History - Charts View
+        {t('advancedFeaturesListHistoryChartsViewTitle')}
       </h4>
       <p className='how-to-play__modal__subsection-text'>
-        Graphical display of past comet explosion multipliers useful for reading
-        volatility and patterns.
+        {t('advancedFeaturesListHistoryChartsViewText')}
       </p>
       <div className='how-to-play__modal__subsection-charts-view'>
         <img
           src={chartsViewImg}
-          alt='Charts View'
+          alt={t('advancedFeaturesListChartsViewAlt')}
           className='charts-view-img'
         />
       </div>
 
-      <h4 className='how-to-play__modal__subsection-title'>List View</h4>
+      <h4 className='how-to-play__modal__subsection-title'>
+        {t('advancedFeaturesListListViewTitle')}
+      </h4>
       <p className='how-to-play__modal__subsection-text'>
-        A compact list of recent crash points in chronological order.
+        {t('advancedFeaturesListListViewText')}
       </p>
       <div className='how-to-play__modal__subsection-charts-view'>
-        <img src={listViewImg} alt='List View' className='charts-view-img' />
+        <img
+          src={listViewImg}
+          alt={t('advancedFeaturesListListViewAlt')}
+          className='charts-view-img'
+        />
       </div>
 
       <h4 className='how-to-play__modal__subsection-title'>
-        Current Round Bets (Live Bets)
+        {t('advancedFeaturesListCurrentRoundBetsTitle')}
       </h4>
       <p className='how-to-play__modal__subsection-text advanced-features-text'>
-        Real-time display of all active bets from players currently in the
-        match:
+        {t('advancedFeaturesListCurrentRoundBetsText')}
       </p>
       <HowToPlayExample steps={ROUND_BETS_STEPS} />
       <p className='how-to-play__modal__subsection-text advanced-features-text'>
-        Adds transparency, social interaction, and competitive excitement.
+        {t('advancedFeaturesListCurrentRoundBetsFooter')}
       </p>
       <div className='how-to-play__modal__subsection-charts-view'>
-        <img src={liveBetsImg} alt='Live Bets' className='charts-view-img' />
+        <img
+          src={liveBetsImg}
+          alt={t('advancedFeaturesListLiveBetsAlt')}
+          className='charts-view-img'
+        />
       </div>
 
       <h4 className='how-to-play__modal__subsection-title'>
-        My History (Personal Bet History)
+        {t('advancedFeaturesListMyHistoryTitle')}
       </h4>
       <p className='how-to-play__modal__subsection-text advanced-features-text'>
-        Your personal record includes:
+        {t('advancedFeaturesListMyHistoryText')}
       </p>
       <HowToPlayExample steps={HISTORY_STEPS} />
       <p className='how-to-play__modal__subsection-text advanced-features-text'>
-        Filter and sort your history to track performance, review strategies,
-        and monitor your bankroll management.
+        {t('advancedFeaturesListMyHistoryFooter')}
       </p>
       <div className='how-to-play__modal__subsection-charts-view'>
-        <img src={historyImg} alt='History' className='charts-view-img' />
+        <img
+          src={historyImg}
+          alt={t('advancedFeaturesListHistoryAlt')}
+          className='charts-view-img'
+        />
       </div>
     </div>
   );

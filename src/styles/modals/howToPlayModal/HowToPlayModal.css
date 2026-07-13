@@ -196,7 +196,7 @@
   gap: 8px;
   padding: 16px 16px 16px 20px;
   background-color: rgba(var(--bg-dark-3));
-  max-width: 135px;
+  width: fit-content;
   border-radius: 12px;
 }
 

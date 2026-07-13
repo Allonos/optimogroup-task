@@ -1,33 +1,10 @@
 import { useTranslation } from 'react-i18next';
 
 import HowToPlayExample from '@/components/ui/modals/howToPlayModal/components/HowToPlayExample';
+import { BETTING_PANELS_STEPS, ACTION_BUTTONS_STEPS } from '@/utils/constants/howToPlayConstants';
+
 import PlacingBetsImg from '@/assets/webp/placingBets.webp';
 
-const BETTING_PANELS_STEPS = [
-  { before: 'Set different bet amounts' },
-  { before: 'Configure auto cahs-out multipliers independently' },
-  { before: 'Place one or two bets simultaneously' },
-  { before: 'Cancel pending bets before the round starts' },
-];
-
-const ACTION_BUTTONS_STEPS = [
-  {
-    highlight: 'BET (Purple):',
-    after: 'Confirm your wager for the next round',
-  },
-  {
-    highlight: 'CANCEL (Red):',
-    after: 'Remove a pending bet before the round starts',
-  },
-  {
-    highlight: 'CASH OUT:',
-    after: 'Collect your winnings during an active round',
-  },
-  {
-    highlight: 'x2 Button:',
-    after: 'Double your current bet amount instantly',
-  },
-];
 
 const GameInterfaceSection = () => {
   const { t } = useTranslation();
@@ -35,10 +12,10 @@ const GameInterfaceSection = () => {
     <>
       <div className='how-to-play__modal__subsection'>
         <h3 className='how-to-play__modal__subsection-title'>
-          Balance Display
+          {t('gameInterfaceBalanceDisplayTitle')}
         </h3>
         <p className='how-to-play__modal__subsection-text'>
-          Top-right live balance display showing your available funds.
+          {t('gameInterfaceBalanceDisplayText')}
         </p>
         <div className='how-to-play__balance-display'>
           <span className='how-to-play__balance-display-label'>
@@ -50,18 +27,22 @@ const GameInterfaceSection = () => {
         </div>
       </div>
       <div className='how-to-play__modal__subsection'>
-        <h3 className='how-to-play__modal__subsection-title'>Betting Panels</h3>
+        <h3 className='how-to-play__modal__subsection-title'>
+          {t('gameInterfaceBettingPanelsTitle')}
+        </h3>
         <p className='how-to-play__modal__subsection-text'>
-          Two independent betting panels (left and right) allow you to:
+          {t('gameInterfaceBettingPanelsText')}
         </p>
         <HowToPlayExample steps={BETTING_PANELS_STEPS} />
       </div>
       <div className='how-to-play__modal__subsection'>
-        <h3 className='how-to-play__modal__subsection-title'>Action Buttons</h3>
+        <h3 className='how-to-play__modal__subsection-title'>
+          {t('gameInterfaceActionButtonsTitle')}
+        </h3>
         <HowToPlayExample steps={ACTION_BUTTONS_STEPS} />
         <img
           src={PlacingBetsImg}
-          alt='Placing Bets'
+          alt={t('placingBets')}
           className='placing-bets-img'
         />
       </div>
