@@ -6,7 +6,7 @@ const GameInfoHeader = () => {
   const gameInfoHeaders = [
     { id: 1, title: t('player') },
     { id: 2, title: t('betUsd') },
-    { id: 3, title: t('cashoutUsd') },
+    { id: 3, title: t('cashoutUsd'), isLast: true },
   ];
 
   return (
@@ -14,7 +14,7 @@ const GameInfoHeader = () => {
       {gameInfoHeaders.map((header) => (
         <span
           key={header.id}
-          className='game-info-header-item text-body-small-semibold'
+          className={`game-info-header-item text-body-small-semibold${header.isLast ? ' game-info-header-item-last' : ''}`}
         >
           {header.title}
         </span>

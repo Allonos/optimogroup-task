@@ -4,7 +4,7 @@
 .game-info-header {
   padding: 10px 16px;
   display: grid;
-  grid-template-columns: 110px 130px 86px;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
@@ -13,4 +13,8 @@
 
 .game-info-header-item {
   color: rgba(var(--text-grey));
+}
+
+.game-info-header-item-last {
+  text-align: right;
 }
