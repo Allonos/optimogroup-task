@@ -17,3 +17,16 @@
   border: none;
   cursor: pointer;
 }
+
+.modal__header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal__header__title {
+  font-size: var(--body-xl);
+  line-height: 22px;
+  font-weight: 700;
+  color: rgba(var(--text-subtitle));
+}

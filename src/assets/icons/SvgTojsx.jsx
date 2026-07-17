@@ -17,3 +17,4 @@ export { default as TicketIcon } from './Ticket.svg?react';
 export { default as ArrowIcon } from './Arrow.svg?react';
 export { default as ThickArrowIcon } from './ThickArrow.svg?react';
 export { default as HistoryIcon } from './History.svg?react';
+export { default as LongArrowIcon } from './LongArrow.svg?react';
