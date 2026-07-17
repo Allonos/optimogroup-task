@@ -157,5 +157,19 @@
   "autoplayConfiguration": "Autoplay Configuration",
   "autoplayConfigurationText": "Use Advanced autoplay settings for hands-free gameplay:",
   "betSettings": "Bet Settings",
-  "stopConditions": "Stop Conditions (Optional)"
+  "stopConditions": "Stop Conditions (Optional)",
+  "freeBetsManagement": "Free Bets Management",
+  "activeFreeBets": "Active Free Bets",
+  "playWithRealMoney": "Play with Real Money",
+  "type": "Type",
+  "fullPayout": "Full Payout",
+  "pureProfit": "Pure Profit",
+  "bonusBalance": "Bonus Balance",
+  "betAmount": "Bet Amount",
+  "betPrice": "Bet Price",
+  "accured": "Accured",
+  "minWithdrawal": "Min.Withdrawal",
+  "expirationDate": "Expiration Date",
+  "archive": "Archive",
+  "playNow": "Play Now"
 }

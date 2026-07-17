@@ -16,6 +16,8 @@
   --winner-gradient-start: 0, 100, 17, 0.461;
   --winner-gradient-end: 30, 131, 33, 0.291;
   --line: 255, 255, 255, 0.1;
+  --stroke-default: 242, 242, 242, 0.2;
+  --separator-color: rgba(255, 255, 255, 0.1);
   --icon-green: 81, 207, 62, 1;
   --icon-white: 255, 255, 255, 1;
   --icon-grey: 126, 124, 141, 1;
@@ -36,4 +38,7 @@
   --button-grey: 45, 44, 53, 1;
   --button-grey-2: 58, 57, 67, 1;
   --switch-active: 81, 207, 62, 1;
+  --green: 81, 207, 62, 1;
+  --orange-gradient-start: 217, 90, 0, 1;
+  --orange-gradient-end: 255, 133, 47, 1;
 }
