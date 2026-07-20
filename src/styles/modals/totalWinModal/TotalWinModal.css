@@ -1,0 +1,47 @@
+.total-win-modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.total-win-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.total-win-modal-content p {
+  font-size: var(--body-lg);
+  line-height: 19px;
+  font-weight: 500;
+  color: rgba(var(--text-grey));
+}
+
+.total-win-modal-total-win {
+  font-size: var(--body-3xl); 
+  line-height: 29px;
+  font-weight: 700;
+  color: rgba(var(--text-white));
+}
+
+.total-win-modal-total-win-amount {
+  display: flex;
+  align-items: baseline;
+}
+
+.total-win-modal-total-win-amount h2 {
+  font-size: var(--body-60);
+  line-height: 44px;
+  font-weight: 700;
+  color: rgba(var(--green));
+  text-align: end;
+}
+
+.total-win-modal-total-win-amount span {
+  font-size: var(--body-3xl);
+  line-height: 29px;
+  font-weight: 700;
+  color: rgba(var(--green));
+  text-align: end;
+}
