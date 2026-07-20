@@ -175,5 +175,7 @@
   "pointDetails": "Point Details",
   "roundId": "Round ID",
   "serverSeed": "Server Seed",
-  "meaningOfProvablyFair": "Meaning of Provably Fair"
+  "meaningOfProvablyFair": "Meaning of Provably Fair",
+  "youGet": "You get",
+  "bonusBetAvailableFor7Days": "Bonus bet available for 7 days"
 }

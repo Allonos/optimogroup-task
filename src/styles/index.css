@@ -23,6 +23,7 @@
 @import "../styles/modals/howToPlayModal/HowToPlayModal.css";
 @import "../styles/modals/freeBetModal/freeBetModal.css";
 @import "../styles/modals/pointDetailsModal/PointDetailModal.css";
+@import "../styles/modals/bonusModal/BonusModal.css";
 
 *,
 *::before,

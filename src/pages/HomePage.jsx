@@ -1,10 +1,17 @@
+import { useState } from 'react';
+
 import GameLayout from '@/components/ui/layouts/GameLayout';
 import BetsListSection from '@/components/ui/sections/BetsListSection';
 import GameHeader from '@/components/ui/headers/gameHeader/GameHeader';
 import background from '@/assets/webp/background.webp';
 import GameActionsSection from '@/components/ui/sections/gameActionsSection/GameActionsSection';
+import BonusModal from '../components/ui/modals/bonusModal/BonusModal';
 
 const HomePage = () => {
+  const [isGetBonusBet, setIsGetBonusBet] = useState(true);
+  const [isGetFreeBet, setGetIsFreeBet] = useState(false);
+  const [totalFreeBetWin, setTotalFreeBetWin] = useState(false);
+
   return (
     <GameLayout>
       <BetsListSection />
@@ -15,6 +22,9 @@ const HomePage = () => {
         </div>
         <GameActionsSection />
       </div>
+
+      <BonusModal isOpen={isGetBonusBet} onClose={() => setIsGetBonusBet(false)} type="bonus" />
+      <BonusModal isOpen={isGetFreeBet} onClose={() => setGetIsFreeBet(false)} type="free" />
     </GameLayout>
   );
 };
