@@ -5,22 +5,37 @@
   background-color: rgba(var(--bg-dark-2));
   border-radius: 12px;
   position: relative;
+  min-height: 48px;
 }
 
 .game-header-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
   overflow: hidden;
-  height: 24px;
-  padding-right: 32px;
+  max-height: 40px;
+  padding: 12px 32px 12px 8px;
   align-content: flex-start;
-  transition: height 0.3s ease;
-  /* max-height: 350px; */
+  transition: max-height 0.3s ease;
+  background-color: rgba(var(--bg-dark-2));
+  border-radius: 12px;
 }
 
 .game-header--open .game-header-track {
-  height: var(--expanded-height, 350px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  max-height:  500px;
+  background-color: rgba(var(--bg-dark-2));
+  border-radius: 12px;
+  padding: 12px 32px 12px 8px;
+  z-index: 10;
+  overflow: hidden;
 }
 
 .game-header-track-item {
@@ -43,6 +58,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  z-index: 11;
 }
 
 .game-header-arrow svg {
