@@ -77,7 +77,10 @@ const FreeBetModal = ({ isOpen, onClose }) => {
           <ModalHeader
             prefix={
               <button onClick={() => setActiveOverlay('main')}>
-                <LongArrowIcon />
+                <LongArrowIcon
+                  className='icon'
+                  style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
+                />
               </button>
             }
             title={t('archive')}
@@ -143,7 +146,10 @@ const FreeBetModal = ({ isOpen, onClose }) => {
               className='free-bets-modal-actions-archive'
               onClick={() => setActiveOverlay('archive')}
             >
-              <HistoryIcon />
+              <HistoryIcon
+                className='icon'
+                style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
+              />
               <span>{t('archive')}</span>
             </button>
             <button className='free-bets-modal-actions-play'>

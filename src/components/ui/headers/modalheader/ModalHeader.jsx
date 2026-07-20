@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { CloseIcon, ArrowIcon } from '@/assets/icons/SvgTojsx';
+import { CloseIcon } from '@/assets/icons/SvgTojsx';
 import '@/styles/headers/modalheader/ModalHeader.css';
 
 const ModalHeader = ({ prefix, title, onClose }) => {

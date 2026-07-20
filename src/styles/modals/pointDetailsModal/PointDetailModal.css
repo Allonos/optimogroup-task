@@ -1,0 +1,140 @@
+@import "../../../utils/ColorVariables.css";
+@import "../../../utils/FontSizeVariables.css";
+
+.point-details-modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.point-details-round-id {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+  border: 1px solid rgba(var(--line));
+  border-radius: 12px;
+  padding: 16px 16px 16px 20px;
+}
+
+.point-details-round-id-label {
+  font-size: var(--body);
+  line-height: 17px;
+  font-weight: 500;
+  color: rgba(var(--text-grey));
+}
+
+.point-details-round-id-value {
+  font-size: var(--body);
+  line-height: 17px;
+  font-weight: 500;
+  color: rgba(var(--text-white));
+}
+
+.point-details-content {
+  padding: 13px 16px 13px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid rgba(var(--line));
+  border-radius: 12px;
+}
+
+.point-details-content__bet {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.point-details-content__rocket-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  background-color: rgba(var(--green));
+  position: relative;
+}
+
+.point-details-content__rocket-icon-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.point-details-content__bet span {
+  font-size: var(--body-2xl);
+  line-height: 24px;
+  font-weight: 700;
+  color: rgba(var(--text-subtitle));
+}
+
+.point-details-content__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.point-details-content__secondary-text {
+  font-size: var(--body-small);
+  line-height: 15px;
+  font-weight: 500;
+  color: rgba(var(--text-secondary));
+}
+
+.point-details-content__hash {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.point-details-content__hash-value {
+  font-weight: 500;
+  color: rgba(var(--text-white));
+}
+
+.point-details-content__hash-value.sm {
+  font-size: var(--body-small);
+  line-height: 15px;
+  
+}
+
+.point-details-content__hash-value.lg {
+  font-size: var(--body);
+  line-height: 17px;
+}
+
+.point-details-content__info-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 16px 15px 20px;
+  border: 1px solid rgba(var(--line));
+  border-radius: 12px;
+}
+
+.point-details-content__provably-fair-btn {
+  background: none;
+  border: none;
+  font-size: var(--body-small);
+  line-height: 15px;
+  text-decoration-line: underline;
+  color: rgba(var(--text-white));
+  cursor: pointer;
+  align-self: center;
+}
+
+.point-details-content__copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 4px;
+  margin: 0;
+  cursor: pointer;
+  line-height: 0;
+  color: inherit;
+}
+
+.point-details-content__copy-btn:hover {
+  opacity: 0.75;
+}

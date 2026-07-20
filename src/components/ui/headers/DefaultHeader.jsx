@@ -25,9 +25,9 @@ const DefaultHeader = () => {
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
             {isMenuOpen ? (
-              <CloseIcon className='icon' />
+              <CloseIcon className='icon' style={{ '--icon-color': 'rgba(var(--text-white))' }} />
             ) : (
-              <MenuIcon className='icon' />
+              <MenuIcon className='icon' style={{ '--icon-color': 'rgba(var(--text-grey))' }} />
             )}
           </button>
           <MenuModal isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />

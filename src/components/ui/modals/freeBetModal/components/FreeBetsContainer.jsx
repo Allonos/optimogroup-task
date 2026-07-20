@@ -62,7 +62,10 @@ const FreeBetsContainer = ({
             tabIndex={isArchive ? -1 : 0}
             aria-hidden={isArchive}
           >
-            <ThickArrowIcon />
+            <ThickArrowIcon
+              className='icon'
+              style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
+            />
           </button>
         </div>
       </div>

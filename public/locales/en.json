@@ -171,5 +171,9 @@
   "minWithdrawal": "Min.Withdrawal",
   "expirationDate": "Expiration Date",
   "archive": "Archive",
-  "playNow": "Play Now"
+  "playNow": "Play Now",
+  "pointDetails": "Point Details",
+  "roundId": "Round ID",
+  "serverSeed": "Server Seed",
+  "meaningOfProvablyFair": "Meaning of Provably Fair"
 }
