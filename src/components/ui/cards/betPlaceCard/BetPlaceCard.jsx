@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import BetControls from '@/components/ui/cards/betPlaceCard/components/BetControls'
 import AutoBetControls from '@/components/ui/cards/betPlaceCard/components/AutoBetControls'
+import AutoBetModal from '@/components/ui/modals/autoBetModal/AutoBetModal'
+
 
 const BetPlaceCard = () => {
   const [quantity, setQuantity] = useState(1.0)
   const presets = [2.0, 5.0, 10.0, 20.0]
 
-  const [autoBetEnabled, setAutoBetEnabled] = useState(true)
+  const [autoBetEnabled, setAutoBetEnabled] = useState(false)
+  const [isAutoBetModalOpen, setIsAutoBetModalOpen] = useState(false)
   const [autoCashoutEnabled, setAutoCashoutEnabled] = useState(false)
+  const [isAutoCashoutModalOpen, setIsAutoCashoutModalOpen] = useState(false)
   const [multiplier, setMultiplier] = useState(2.0)
 
   return (
@@ -33,6 +37,15 @@ const BetPlaceCard = () => {
             return +(m - 0.1).toFixed(2);
           })
         }
+        setIsAutoBetModalOpen={() => setIsAutoBetModalOpen(true)}
+        setIsAutoCashoutModalOpen={() => setIsAutoCashoutModalOpen(true)}
+      />
+      <AutoBetModal
+        isOpen={isAutoBetModalOpen || isAutoCashoutModalOpen}
+        onClose={() => {
+          setIsAutoBetModalOpen(false);
+          setIsAutoCashoutModalOpen(false);
+        }}
       />
     </div>
   )

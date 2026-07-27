@@ -25,6 +25,7 @@
 @import "../styles/modals/pointDetailsModal/PointDetailModal.css";
 @import "../styles/modals/bonusModal/BonusModal.css";
 @import "../styles/modals/totalWinModal/TotalWinModal.css";
+@import "../styles/modals/autoBetModal/AutoBetModal.css";
 
 *,
 *::before,

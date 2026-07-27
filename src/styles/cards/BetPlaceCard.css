@@ -134,6 +134,8 @@
   border: 1px solid rgba(var(--button-grey));
   border-radius: 50px;
   padding: 4px;
+  max-height: 32px;
+  height: 100%;
 }
 
 .multiplier-btn {
@@ -145,4 +147,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.auto-bet-modal-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.auto-bet-modal-cancel {
+  max-width: 130px;
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(var(--line));
+  font-size: var(--body);
+  font-weight: 700;
+  color: rgba(var(--text-white));
+  line-height: 17px;
+  background: none;
+  cursor: pointer;
+}
+
+.auto-bet-modal-start {
+  max-width: 140px;
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  font-size: var(--body-lg);
+  font-weight: 700;
+  color: rgba(var(--text-white));
+  line-height: 17px;
+  background: none;
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(var(--green-gradient-end)), rgba(var(--green-gradient-start)));
 }

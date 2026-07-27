@@ -152,7 +152,7 @@ const FreeBetModal = ({ isOpen, onClose }) => {
               />
               <span>{t('archive')}</span>
             </button>
-            <button className='free-bets-modal-actions-play'>
+            <button className='free-bets-modal-actions-play' onClick={onClose}>
               <span>{t('playNow')}</span>
             </button>
           </div>

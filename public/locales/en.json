@@ -179,5 +179,13 @@
   "youGet": "You get",
   "bonusBetAvailableFor7Days": "Bonus bet available for 7 days",
   "youFinishedFreeBets": "You have finished free bet",
-  "pressAnywhereToContinue": "Press anywhere to continue"
+  "pressAnywhereToContinue": "Press anywhere to continue",
+  "reset": "Reset",
+  "start": "Start",
+  "stopAutoPlayOn": "Stop auto play on",
+  "rounds": "Rounds",
+  "total": "Total",
+  "cashIncreasedBy": "Cash increased by",
+  "cashDecreasedBy": "Cash decreased by",
+  "singleWinExceeds": "Single win exceeds"
 }

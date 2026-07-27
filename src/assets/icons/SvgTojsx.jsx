@@ -20,3 +20,4 @@ export { default as HistoryIcon } from './History.svg?react';
 export { default as LongArrowIcon } from './LongArrow.svg?react';
 export { default as RocketIcon } from './Rocket.svg?react';
 export { default as CopyIcon } from './Copy.svg?react';
+export { default as CheckMarkIcon } from './CheckMark.svg?react';

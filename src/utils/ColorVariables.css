@@ -43,4 +43,5 @@
   --orange-gradient-end: 255, 133, 47, 1;
   --orange-gradient-hover-start: 255, 133, 47, 1;
   --orange-gradient-hover-end: 217, 90, 0, 1;
+  --active-grey: 45, 44, 53, 1;
 }
