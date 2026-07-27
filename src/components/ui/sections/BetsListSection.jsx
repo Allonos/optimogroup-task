@@ -19,38 +19,30 @@ const BetsListSection = () => {
   const renderList = () => {
     switch (activeTab) {
       case 'allBets':
-        return (
-          <>
-            {betList.map((player) => (
-              <GameInfoList
-                key={`${player.id}`}
-                playerName={player.playerName}
-                bet={player.bet}
-                betWin={player.betWin}
-                cashout={player.cashout}
-                status={player.status}
-                activeTab={activeTab}
-              />
-            ))}
-          </>
-        );
+        return betList.map((player) => (
+          <GameInfoList
+            key={`${player.id}`}
+            playerName={player.playerName}
+            bet={player.bet}
+            betWin={player.betWin}
+            cashout={player.cashout}
+            status={player.status}
+            activeTab={activeTab}
+          />
+        ));
       case 'myBets':
-        return (
-          <>
-            {MyBetList.map((bet) => (
-              <GameInfoList
-                key={`${bet.id}`}
-                date={bet.date}
-                time={bet.time}
-                bet={bet.bet}
-                betWin={bet.betWin}
-                cashout={bet.cashout}
-                status={bet.status}
-                activeTab={activeTab}
-              />
-            ))}
-          </>
-        );
+        return MyBetList.map((bet) => (
+          <GameInfoList
+            key={`${bet.id}`}
+            date={bet.date}
+            time={bet.time}
+            bet={bet.bet}
+            betWin={bet.betWin}
+            cashout={bet.cashout}
+            status={bet.status}
+            activeTab={activeTab}
+          />
+        ));
       case 'stats':
         return <StatsTab activeStatTab={activeStatTab} />;
     }
@@ -67,6 +59,7 @@ const BetsListSection = () => {
         {renderList()}
       </div>
 
+      {activeTab !== 'stats' && <BetsListFooter />}
       {activeTab === "stats" && (
         <BetsStatsFooter />
       )}

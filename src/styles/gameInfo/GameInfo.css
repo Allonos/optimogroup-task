@@ -20,11 +20,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
   min-height: 56px;
   padding: 12px;
   background-color: rgba(var(--bg-dark-3));
