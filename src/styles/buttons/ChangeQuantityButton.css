@@ -16,3 +16,23 @@
 .change-quantity:hover {
   background-color: rgba(var(--button-grey-2));
 }
+
+@media (max-width: 1440px) {
+  .change-quantity {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(var(--bg-dark-2));
+  }
+
+  .change-quantity:hover {
+    background-color: rgba(var(--bg-dark-2));
+  }
+
+  .quantity-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

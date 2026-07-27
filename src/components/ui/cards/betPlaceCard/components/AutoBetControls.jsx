@@ -54,6 +54,7 @@ const AutoBetControls = ({
           multiplier={multiplier}
           onIncrease={onIncreaseMultiplier}
           onDecrease={onDecreaseMultiplier}
+          autoCashoutEnabled={autoCashoutEnabled}
         />
       </div>
     </div>

@@ -131,3 +131,14 @@ body,
     border-radius: 5px;
   }
 }
+
+@media (max-width: 1440px) {
+  .game-layout {
+    max-width: 1280px;
+  }
+
+  .background-img {
+    max-width: 908px;
+    max-height: 389px;
+  }
+}

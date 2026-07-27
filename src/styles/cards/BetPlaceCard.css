@@ -16,6 +16,10 @@
   max-height: 156px;
 }
 
+.bet-place-divider {
+  display: none;
+}
+
 .bet-place-top {
   display: flex;
   justify-content: space-between;
@@ -36,6 +40,8 @@
   padding: 3px 4px;
   width: 100%;
 }
+
+
 
 .change-by-actions span {
   font-size: var(--body);
@@ -62,6 +68,10 @@
   font-size: var(--body-small);
   line-height: 15px;
   color: rgba(var(--text-grey));
+}
+
+.quantity-value-fixed {
+  display: none;
 }
 
 .bet-place-button {
@@ -114,6 +124,10 @@
   color: rgba(var(--text-white));
   font-weight: 600;
   line-height: 15px;
+}
+
+.switch-label.disabled {
+  color: rgba(var(--text-grey));
 }
 
 .auto-cashout-container {
@@ -184,4 +198,71 @@
   background: none;
   cursor: pointer;
   background: linear-gradient(to right, rgba(var(--green-gradient-end)), rgba(var(--green-gradient-start)));
+}
+
+@media (max-width: 1440px) {
+  .bet-place-button {
+    max-width: 174px;
+  }
+
+  .bet-place-button__label {
+    font-size: var(--body);
+    line-height: 17px;
+  }
+
+  .bet-place-bottom {
+    padding-top: 0px;
+    gap: 94px;
+  }
+
+  .switch-group {
+    gap: 4px;
+  }
+
+  .auto-cashout-container { 
+    gap: 8px;
+  }
+
+  .switch-group--cashout {
+    gap: 8px;
+  }
+
+  .multiplier-control {
+    max-height: 24px;
+    padding: 4px 2px;
+    border: none;
+    background: rgba(var(--bg-dark-3));
+  }
+
+  .multiplier-btn {
+    width: 20px;
+    height: 20px;
+    background: rgba(var(--bg-dark-2));
+    border-radius: 34px;
+  }
+
+  .change-by-actions {
+    background-color: rgba(var(--bg-dark-3));
+  }
+
+  .bet-place-container {
+    max-height: 160px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .bet-place-divider {
+    display: block;
+    width: 100%;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: rgba(var(--line));
+  }
+  .change-by-numbers button {
+    padding: 6.5px 20.5px;
+    max-width: 54px;
+    width: 100%;
+  }
 }

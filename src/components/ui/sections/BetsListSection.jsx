@@ -70,7 +70,6 @@ const BetsListSection = () => {
       {activeTab === "stats" && (
         <BetsStatsFooter />
       )}
-      {/* <BetsListFooter /> */}
     </section>
   );
 };

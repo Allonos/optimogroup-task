@@ -24,6 +24,9 @@ const BetPlaceCard = () => {
         onSelectPreset={setQuantity}
         onPlaceBet={() => console.log('placing bet', quantity)}
       />
+
+      <div className='bet-place-divider' />
+
       <AutoBetControls
         autoBetEnabled={autoBetEnabled}
         onToggleAutoBet={() => setAutoBetEnabled((v) => !v)}
@@ -40,6 +43,7 @@ const BetPlaceCard = () => {
         setIsAutoBetModalOpen={() => setIsAutoBetModalOpen(true)}
         setIsAutoCashoutModalOpen={() => setIsAutoCashoutModalOpen(true)}
       />
+
       <AutoBetModal
         isOpen={isAutoBetModalOpen || isAutoCashoutModalOpen}
         onClose={() => {

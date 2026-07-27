@@ -34,3 +34,9 @@
   line-height: 15px;
   color: rgba(var(--text-white));
 }
+
+@media (max-width: 1440px) {
+  .info-stat-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

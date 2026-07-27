@@ -30,3 +30,20 @@
   background-color: rgba(var(--icon-white));
   transform: translateX(20px);
 }
+
+@media (max-width: 1440px) {
+  .switch {
+    width: 36px;
+    height: 20px;
+  }
+
+  .switch__thumb {
+    width: 16px;
+    height: 16px;
+  }
+
+  .switch__thumb.checked {
+  background-color: rgba(var(--icon-white));
+  transform: translateX(16px);
+}
+}

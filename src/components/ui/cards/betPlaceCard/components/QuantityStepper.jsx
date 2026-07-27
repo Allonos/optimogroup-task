@@ -9,17 +9,17 @@ const QuantityStepper = ({ quantity, onIncrease, onDecrease }) => {
         onClick={onDecrease}
         icon={
           <MinusIcon
-            className='icon'
+            className='icon quantity-icon'
             style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
           />
         }
       />
-      <span>{quantity}</span>
+      <span>{quantity.toFixed(2)}</span>
       <ChangeQuantityButton
         onClick={onIncrease}
         icon={
           <PlusIcon
-            className='icon'
+            className='icon quantity-icon'
             style={{ '--icon-color': 'rgba(var(--icon-grey))' }}
           />
         }

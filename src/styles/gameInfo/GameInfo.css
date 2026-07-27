@@ -2,7 +2,6 @@
   max-width: 410px;
   width: 100%;
   position: relative;
-  /* height: 734px; */
   overflow: hidden;
 }
 
@@ -56,4 +55,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px
+}
+
+@media (max-width: 1440px) {
+  .bets-list-tabs-container {
+    max-width: 348px;
+  }
 }
