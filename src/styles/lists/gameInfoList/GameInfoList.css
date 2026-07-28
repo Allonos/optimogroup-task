@@ -104,3 +104,24 @@
     max-height: 463px;
   }
 }
+
+@media (max-width: 1280px) {
+  .game-info-list {
+    padding-bottom: 0;
+    max-height: 520px;
+  }
+
+  .game-info-list-item {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .game-info-list-item__bet {
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  .game-info-list-stat {
+    max-height: 100%;
+    height: 520px;
+  }
+}

@@ -18,9 +18,7 @@ const HomePage = () => {
       <BetsListSection />
       <div className='home-page-content'>
         <GameHeader />
-        {/* <div> */}
         <img src={background} alt='background' className='background-img' />
-        {/* </div> */}
         <GameActionsSection />
       </div>
 

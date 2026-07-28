@@ -40,3 +40,9 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+@media (max-width: 1280px) {
+  .info-stat-container {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}

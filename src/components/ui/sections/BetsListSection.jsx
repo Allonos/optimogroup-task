@@ -50,6 +50,9 @@ const BetsListSection = () => {
 
   return (
     <section className='bets-list-tabs-container'>
+      <div className='bets-list-tabs-container__header'>
+        {activeTab !== 'stats' && <BetsListFooter />}
+      </div>
       <BetsListTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       {activeTab !== 'stats' && <GameInfoHeader />}
       {activeTab === 'stats' && (
@@ -59,7 +62,10 @@ const BetsListSection = () => {
         {renderList()}
       </div>
 
-      {activeTab !== 'stats' && <BetsListFooter />}
+      <div className='bets-list-tabs-container__footer'>
+        {activeTab !== 'stats' && <BetsListFooter />}
+      </div>
+
       {activeTab === "stats" && (
         <BetsStatsFooter />
       )}

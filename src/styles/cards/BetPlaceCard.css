@@ -71,6 +71,10 @@
 }
 
 .quantity-value-fixed {
+  display: block;
+}
+
+.quantity-value-not-fixed {
   display: none;
 }
 
@@ -264,5 +268,23 @@
     padding: 6.5px 20.5px;
     max-width: 54px;
     width: 100%;
+  }
+
+  .quantity-value-fixed {
+    display: none;
+  }
+
+  .quantity-value-not-fixed {
+    display: block;
+  }
+}
+
+@media (max-width: 1280px) {
+  .bet-place-container {
+    padding: 16px 41px;
+  }
+
+  .change-by-numbers button {
+    max-width: 100%;
   }
 }

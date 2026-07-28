@@ -52,8 +52,39 @@
   gap: 20px
 }
 
+.bets-list-tabs-container__header {
+  display: none;
+}
+
 @media (max-width: 1440px) {
   .bets-list-tabs-container {
     max-width: 348px;
+  }
+
+  
+}
+
+@media (max-width: 1280px) {
+  .bets-list-tabs-container__header {
+    display: block;
+  }
+
+  .bets-list-tabs-container__footer {
+    display: none;
+  }
+  .bets-list-tabs-container {
+    max-width: 100%;
+  }
+
+  .bets-list-footer {
+    margin-bottom: 8px;
+  }
+
+  .stats-list-header {
+    display: none;
+  }
+
+  .chart-container {
+    height: 432px;
   }
 }

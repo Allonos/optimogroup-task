@@ -142,3 +142,23 @@ body,
     max-height: 389px;
   }
 }
+
+@media (max-width: 1280px) {
+  .game-layout-children {
+    flex-direction: column-reverse;
+  }
+
+  .home-page-content {
+    max-width: 100%;
+    /* width: 100%; */
+  }
+
+  .game-layout {
+    max-width: 100%;
+  }
+
+  .background-img {
+    max-width: 100%;
+    max-height: 359px;
+  }
+}

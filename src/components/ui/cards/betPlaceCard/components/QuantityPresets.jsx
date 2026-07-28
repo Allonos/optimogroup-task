@@ -4,7 +4,7 @@ const QuantityPresets = ({ presets, onSelect }) => {
       {presets.map((value) => (
         <button key={value} onClick={() => onSelect(value)}>
           <span className='quantity-value-fixed'>{value.toFixed(2)}</span>
-          <span>{value.toFixed(0)}</span>
+          <span className='quantity-value-not-fixed'>{value.toFixed(0)}</span>
         </button>
       ))}
     </div>
