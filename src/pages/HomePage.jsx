@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import DefaultFooter from '@/components/ui/footers/DefaultFooter';
 import GameLayout from '@/components/ui/layouts/GameLayout';
 import BetsListSection from '@/components/ui/sections/BetsListSection';
 import GameHeader from '@/components/ui/headers/gameHeader/GameHeader';
@@ -15,6 +15,9 @@ const HomePage = () => {
 
   return (
     <GameLayout>
+      <div className='home-page-footer'>
+        <DefaultFooter />
+      </div>
       <BetsListSection />
       <div className='home-page-content'>
         <GameHeader />

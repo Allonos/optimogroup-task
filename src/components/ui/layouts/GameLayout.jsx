@@ -6,7 +6,9 @@ const GameLayout = ({ children }) => {
     <main className='game-layout'>
       <DefaultHeader />
       <section className='game-layout-children'>{children}</section>
-      <DefaultFooter />
+      <div className='game-layout-footer'>
+        <DefaultFooter />
+      </div>
     </main>
   );
 };

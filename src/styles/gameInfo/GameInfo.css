@@ -88,3 +88,19 @@
     height: 432px;
   }
 }
+
+@media (max-width: 576px) {
+  .bets-list-footer {
+    position: fixed;
+    bottom: -10px;
+    width: 100%;
+    z-index: 100;
+    left: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .bets-list-tabs-container {
+    padding: 0 8px;
+  }
+}

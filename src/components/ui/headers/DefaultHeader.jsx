@@ -9,7 +9,11 @@ const DefaultHeader = () => {
 
   return (
     <header className='header'>
-      <div />
+      <div className="empty-div" />
+      <div className="header__left">
+        <div className='header__empty-div' />
+        <h1 className='header__title'>Starfall</h1>
+      </div>
       <div className='header__right'>
 
         <div className='header__balance'>

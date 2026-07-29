@@ -29,6 +29,7 @@
 
 .change-quantity-container {
   width: 100%;
+  min-width: 0;
 }
 
 .change-by-actions {
@@ -40,8 +41,6 @@
   padding: 3px 4px;
   width: 100%;
 }
-
-
 
 .change-by-actions span {
   font-size: var(--body);
@@ -62,6 +61,8 @@
   background-color: rgba(var(--button-grey));
   border-radius: 48px;
   cursor: pointer;
+  flex: 1;
+  min-width: 0;
 }
 
 .change-by-numbers span {
@@ -286,5 +287,54 @@
 
   .change-by-numbers button {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .action-section {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bet-place-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .bet-place-top {
+    gap: 12px;
+  }
+
+  .bet-place-button {
+    max-width: 100%;
+  }
+
+  .auto-cashout-container {
+    max-width: 300px;
+    justify-content: flex-end
+  }
+
+  .bet-place-bottom {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 576px) {
+  .bet-place-button {
+    width: 149px;
+  }
+
+  .change-by-numbers button {
+    padding: 8.5px 18px;
+  }
+
+  .change-quantity-container {
+    max-width: 174px;
+  }
+
+  .bet-place-bottom {
+    gap: 19px;
   }
 }

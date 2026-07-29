@@ -12,9 +12,14 @@ import StatsTab from '@/components/ui/tabs/statsTabs/StatsTab';
 import BetsStatsFooter from '@/components/ui/footers/BetsStatsFooter';
 
 
-const BetsListSection = () => {
+const BetsListSection = ({ onBetsFooterVisibilityChange }) => {
   const [activeTab, setActiveTab] = useState('allBets');
   const [activeStatTab, setActiveStatTab] = useState('stats');
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    onBetsFooterVisibilityChange?.(tab !== 'stats');
+  };
 
   const renderList = () => {
     switch (activeTab) {
@@ -53,7 +58,7 @@ const BetsListSection = () => {
       <div className='bets-list-tabs-container__header'>
         {activeTab !== 'stats' && <BetsListFooter />}
       </div>
-      <BetsListTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      <BetsListTabs activeTab={activeTab} setActiveTab={handleTabChange} />
       {activeTab !== 'stats' && <GameInfoHeader />}
       {activeTab === 'stats' && (
         <StatsTabs activeStatTab={activeStatTab} setActiveStatTab={setActiveStatTab} />

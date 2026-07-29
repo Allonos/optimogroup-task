@@ -40,4 +40,11 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Galada';
+  src: url('/fonts/galada/Galada-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 

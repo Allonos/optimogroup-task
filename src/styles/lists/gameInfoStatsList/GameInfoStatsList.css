@@ -46,3 +46,22 @@
     grid-template-columns: repeat(10, 1fr);
   }
 }
+
+@media (max-width: 1024px) {
+  .info-stat-value {
+    font-size: var(--body-xs);
+    line-height: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-stat-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .info-stat-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
