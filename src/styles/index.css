@@ -185,6 +185,14 @@ body,
     display: block;
   }
 
+  .bets-list-footer--hidden {
+    display: none;
+  }
+
+  .bets-list-footer--hidden {
+    display: none;
+  }
+
   .game-layout-footer {
     display: none;
   }

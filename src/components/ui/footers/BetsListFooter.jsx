@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next';
+import { useModal } from '@/store/contexts/ModalContext';
 
 const BetsListFooter = () => {
   const { t } = useTranslation();
+  const { isAnyModalOpen } = useModal();
 
   return (
-    <footer className='bets-list-footer'>
+    <footer className={`bets-list-footer ${isAnyModalOpen ? 'bets-list-footer--hidden' : ''}`}>
       <div className='bets-list-footer__item'>
         <span className='bets-list-footer__label text-body-small-semibold'>
           {t('bets')}

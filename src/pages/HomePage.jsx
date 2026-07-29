@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useModal } from '@/store/contexts/ModalContext';
 import DefaultFooter from '@/components/ui/footers/DefaultFooter';
 import GameLayout from '@/components/ui/layouts/GameLayout';
 import BetsListSection from '@/components/ui/sections/BetsListSection';
@@ -12,6 +13,10 @@ const HomePage = () => {
   const [isGetBonusBet, setIsGetBonusBet] = useState(false);
   const [isGetFreeBet, setGetIsFreeBet] = useState(false);
   const [totalFreeBetWin, setTotalFreeBetWin] = useState(true);
+
+  const { isAnyModalOpen } = useModal();
+
+  console.log('isAnyModalOpen:', isAnyModalOpen);
 
   return (
     <GameLayout>

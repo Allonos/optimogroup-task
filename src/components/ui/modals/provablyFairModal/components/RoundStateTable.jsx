@@ -21,6 +21,17 @@ const RoundStateTable = ({ title, values }) => {
           ))}
         </div>
       </div>
+      <div className='modal__frame__content__flex'>
+        {HEADERS.map((h, i) => (
+          <div
+            className={`modal__frame__flex__row ${i === HEADERS.length - 1 ? 'last' : ''}`}
+            key={h}
+          >
+            <span className='modal__frame__flex__key'>{t(h)}</span>
+            <span className='modal__frame__flex__value'>{t(values[i])}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

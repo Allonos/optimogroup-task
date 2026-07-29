@@ -26,7 +26,6 @@
   pointer-events: none;
   transform: translateY(-8px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-    
 }
 
 .modal--anchored {
@@ -48,9 +47,37 @@
   display: block;
 }
 
+.modal--fixed.modal--open {
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
 .modal--open {
   display: block;
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
+}
+
+.modal--fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; 
+}
+
+@media (max-width: 768px) {
+  .modal--fixed {
+    top: auto;                 /* cancel the desktop top: 50% */
+    bottom: 0;
+    left: 0;
+    display: block;            /* keep it mounted so transform can animate */
+    opacity: 1;                /* drawers slide, they don't fade */
+    transform: translateY(100%); /* parked just off-screen at the bottom */
+  }
+
+  .modal--fixed.modal--open {
+    transform: translateY(0);
+  }
 }

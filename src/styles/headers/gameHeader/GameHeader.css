@@ -34,7 +34,6 @@
   background-color: rgba(var(--bg-dark-2));
   border-radius: 12px;
   padding: 12px 32px 12px 8px;
-  z-index: 10;
   overflow: hidden;
 }
 
@@ -58,7 +57,6 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 11;
 }
 
 .game-header-arrow svg {

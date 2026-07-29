@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { useModal } from '@/store/contexts/ModalContext';
 import DefaultModal from '@/components/ui/modals/DefaultModal';
 import ProvablyFairInstructions from '@/components/ui/modals/provablyFairModal/components/ProvablyFairInstructions';
 import RoundStateTable from '@/components/ui/modals/provablyFairModal/components/RoundStateTable';
@@ -30,21 +31,17 @@ const AFTER_ITEMS = [
 const ProvablyFairModal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
 
+  const { setIsAnyModalOpen } = useModal();
+
+  useEffect(() => {
+    setIsAnyModalOpen(isOpen);
+  }, [isOpen, setIsAnyModalOpen]);
+
   return (
     <DefaultModal
       isOpen={isOpen}
       onClose={onClose}
-      className='modal--centered no-scrollbar'
-      style={{
-        maxWidth: 1006,
-        width: '100%',
-        maxHeight: 581,
-        overflowY: 'auto',
-        borderRadius: 16,
-        padding: 24,
-        border: '1px solid rgba(var(--line))',
-        zIndex: 100,
-      }}
+      className='modal--fixed no-scrollbar provably-fair-modal'
     >
       <ModalHeader title={t('provablyFair')} onClose={onClose} />
       <section className='provably__fair__modal__content'>

@@ -1,9 +1,12 @@
 import HomePage from '@/pages/HomePage';
+import { ModalProvider } from '@/store/contexts/ModalContext';
 
 function App() {
   return (
     <>
-      <HomePage />
+      <ModalProvider>
+        <HomePage />
+      </ModalProvider>
     </>
   );
 }

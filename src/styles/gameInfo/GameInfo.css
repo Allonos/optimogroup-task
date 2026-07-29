@@ -100,6 +100,17 @@
     border-bottom-right-radius: 0px;
   }
 
+  .bets-list-footer.hidden {
+    position: fixed;
+    bottom: -10px;
+    width: 100%;
+    z-index: 100;
+    left: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: none;
+  }
+
   .bets-list-tabs-container {
     padding: 0 8px;
   }

@@ -71,7 +71,46 @@ ul {
   padding: 16px;
   overflow: hidden;
   gap: 12px;
+}
 
+.modal__frame__content__flex {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  background-color: rgba(var(--bg-dark-3));
+  border-radius: 8px;
+  padding: 16px;
+  overflow: hidden;
+  display: none;
+}
+
+.modal__frame__flex__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(var(--line));
+  padding-bottom: 11px;
+}
+
+.modal__frame__flex__row.last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.modal__frame__flex__key {
+  font-size: var(--body);
+  line-height: 21px;
+  font-weight: 700;
+  color: rgba(var(--text-grey));
+}
+
+.modal__frame__flex__value {
+  font-size: var(--body);
+  line-height: 21px;
+  font-weight: 500;
+  color: rgba(var(--text-white));
 }
 
 .modal__frame__content > div:not(.modal__separator) {
@@ -117,6 +156,11 @@ ul {
   color: rgba(var(--text-grey));
 }
 
+.example-text {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
 .modal__frame__1 ul {
   padding-left: 16px;
 }
@@ -152,4 +196,61 @@ ul {
   line-height: 21px;
   font-weight: 400;
   width: 20px;
+}
+
+.provably-fair-modal {
+  max-width: 1006px;
+  width: 100%;
+  max-height: 581px;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(var(--line));
+  z-index: 100;
+}
+
+.modal__frame__content-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(var(--bg-dark-3));
+  border-radius: 8px;
+  padding: 16px;
+  overflow: hidden;
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .provably-fair-modal {
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .modal__frame__content > div:not(.modal__separator) {
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .modal__frame__content__flex {
+    display: flex;
+  }
+
+  .modal__frame__content {
+    display: none
+  }
+
+  .provably-fair-modal {
+    max-width: 100%;
+    width: 100%;
+    max-height: 632px;
+    border-radius: 0;
+    padding: 16px;
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
 }
