@@ -10,9 +10,7 @@ const DefaultFooter = () => {
         <div className='footer-content footer-left'>
           <span className='default-footer-text'>{t('poweredBy')}</span>
           <LogoIcon
-            width={64}
-            height={16}
-            className='icon'
+            className='icon logo-icon'
             style={{ '--icon-color': 'rgba(var(--icon-white))' }}
           />
         </div>

@@ -39,6 +39,18 @@
   line-height: 15px;
 }
 
+.logo-icon {
+  width: 96px;
+  height: 24px;
+}
+
+@media (max-width: 1024px) {
+  .logo-icon {
+    width: 64px;
+    height: 16px;
+  }
+}
+
 @media (max-width: 576px) {
   .default-footer {
     padding: 4px 8px;

@@ -69,12 +69,12 @@
 
 @media (max-width: 768px) {
   .modal--fixed {
-    top: auto;                 /* cancel the desktop top: 50% */
+    top: auto; 
     bottom: 0;
     left: 0;
-    display: block;            /* keep it mounted so transform can animate */
-    opacity: 1;                /* drawers slide, they don't fade */
-    transform: translateY(100%); /* parked just off-screen at the bottom */
+    display: block;
+    opacity: 1;
+    transform: translateY(100%);
   }
 
   .modal--fixed.modal--open {

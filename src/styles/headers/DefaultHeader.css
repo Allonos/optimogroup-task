@@ -20,6 +20,7 @@
   font-size: var(--body-3xl);
   font-weight: 400;
   color: rgba(var(--text-white));
+  display: none;
 }
 
 .header__left {
@@ -132,6 +133,14 @@
     max-width: 34px;
     max-height: 34px;
   }
+
+  .header__empty-div {
+    display: block;
+  }
+
+  .header__title {
+    display: block;
+  }
 }
 
 @media (max-width: 576px) {
@@ -139,7 +148,5 @@
     padding: 0 8px;
   }
 
-  .header__empty-div {
-    display: block;
-  }
+
 }
