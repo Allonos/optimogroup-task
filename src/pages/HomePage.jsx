@@ -17,8 +17,6 @@ const HomePage = () => {
 
   const { isAnyModalOpen } = useModal();
 
-  console.log('isAnyModalOpen:', isAnyModalOpen);
-
   return (
     <GameLayout>
       <div className='home-page-footer'>

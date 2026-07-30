@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import Phaser from 'phaser';
 import { SpinePlugin } from '@esotericsoftware/spine-phaser-v4';
 import BeachScene from './scenes/BeachScene';
+import StartScene from './scenes/StartScene';
 
 let gameInstance = null;
 
@@ -25,8 +26,9 @@ const PhaserGame = ({ className }) => {
             { key: 'spine.SpinePlugin', plugin: SpinePlugin, mapping: 'spine' },
           ],
         },
-        scene: [BeachScene],
+        scene: [BeachScene, StartScene],
       });
+      window.game = gameInstance;
     } else if (gameInstance.canvas && containerRef.current) {
       containerRef.current.appendChild(gameInstance.canvas);
     }
