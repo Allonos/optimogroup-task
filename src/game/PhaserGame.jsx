@@ -2,11 +2,11 @@ import { useEffect, useRef } from 'react';
 import Phaser from 'phaser';
 import { SpinePlugin } from '@esotericsoftware/spine-phaser-v4';
 import BeachScene from './scenes/BeachScene';
-import StartScene from './scenes/StartScene';
+import PlayerScene from './scenes/PlayerScene';
 
-let gameInstance = null;
+let gameInstance = null; // module-scoped, NOT reset by React remounts
 
-const PhaserGame = ({ className }) => {
+const PhaserGame = ({ className, isRoundActive }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -17,7 +17,6 @@ const PhaserGame = ({ className }) => {
         transparent: true,
         scale: {
           mode: Phaser.Scale.FIT,
-          // autoCenter: Phaser.Scale.CENTER_BOTH,
           width: 2012,
           height: 1028,
         },
@@ -26,13 +25,24 @@ const PhaserGame = ({ className }) => {
             { key: 'spine.SpinePlugin', plugin: SpinePlugin, mapping: 'spine' },
           ],
         },
-        scene: [BeachScene, StartScene],
+        scene: [BeachScene, PlayerScene],
       });
       window.game = gameInstance;
     } else if (gameInstance.canvas && containerRef.current) {
       containerRef.current.appendChild(gameInstance.canvas);
     }
   }, []);
+
+  const wasRoundActive = useRef(true);
+  useEffect(() => {
+    if (wasRoundActive.current && !isRoundActive) {
+      const scene = gameInstance?.scene.getScene('PlayerScene');
+      if (scene && typeof scene.triggerCatch === 'function') {
+        scene.triggerCatch();
+      }
+    }
+    wasRoundActive.current = isRoundActive;
+  }, [isRoundActive]);
 
   return <div ref={containerRef} className={className} />;
 };

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useModal } from '@/store/contexts/ModalContext';
 import DefaultFooter from '@/components/ui/footers/DefaultFooter';
 import GameLayout from '@/components/ui/layouts/GameLayout';
@@ -10,12 +10,26 @@ import BonusModal from '@/components/ui/modals/bonusModal/BonusModal';
 import TotalWinModal from '@/components/ui/modals/totalWinModal/TotalWinModal';
 import PhaserGame from '../game/PhaserGame';
 
+const ROUND_DURATION_MS = 5000;
+
 const HomePage = () => {
   const [isGetBonusBet, setIsGetBonusBet] = useState(false);
   const [isGetFreeBet, setGetIsFreeBet] = useState(false);
-  const [totalFreeBetWin, setTotalFreeBetWin] = useState(true);
+  const [totalFreeBetWin, setTotalFreeBetWin] = useState(false);
+
+  const [isRoundActive, setIsRoundActive] = useState(true);
 
   const { isAnyModalOpen } = useModal();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsRoundActive(false);
+    }, ROUND_DURATION_MS);
+
+    console.log(timer)
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <GameLayout>
@@ -25,7 +39,7 @@ const HomePage = () => {
       <BetsListSection />
       <div className='home-page-content'>
         <GameHeader />
-        <PhaserGame className='background-img' />
+        <PhaserGame className='background-img' isRoundActive={isRoundActive} />
         <GameActionsSection />
       </div>
 

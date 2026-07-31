@@ -50,8 +50,8 @@ export default class BeachScene extends Scene {
       beach.animationState.setAnimation(0, animationNames[0], true);
     }
 
-    if (!this.scene.isActive('StartScene')) {
-      this.scene.launch('StartScene');
+    if (!this.scene.isActive('PlayerScene')) {
+      this.scene.launch('PlayerScene');
     }
   }
 }
