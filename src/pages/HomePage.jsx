@@ -19,14 +19,12 @@ const HomePage = () => {
 
   const [isRoundActive, setIsRoundActive] = useState(true);
 
-  const { isAnyModalOpen } = useModal();
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsRoundActive(false);
     }, ROUND_DURATION_MS);
 
-    console.log(timer)
+    console.log(timer);
 
     return () => clearTimeout(timer);
   }, []);

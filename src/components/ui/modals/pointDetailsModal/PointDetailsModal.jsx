@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useModal } from '@/store/contexts/ModalContext';
 
 import ProvablyFairModal from '@/components/ui/modals/provablyFairModal/ProvablyFairModal';
 import DefaultModal from '@/components/ui/modals/DefaultModal';
@@ -11,7 +12,12 @@ const SERVER_SEED = '5435a2567s424k12310afed4';
 
 const PointDetailsModal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
+  const { setIsAnyModalOpen } = useModal();
   const [isProvablyFairModalOpen, setIsProvablyFairModalOpen] = useState(false);
+
+  useEffect(() => {
+    setIsAnyModalOpen(isOpen);
+  }, [isOpen, setIsAnyModalOpen]);
 
   const handleProvablyFairModalOpen = () => {
     onClose();
@@ -31,15 +37,7 @@ const PointDetailsModal = ({ isOpen, onClose }) => {
       <DefaultModal
         isOpen={isOpen}
         onClose={onClose}
-        className='modal--centered'
-        style={{
-          maxWidth: 770,
-          width: '100%',
-          borderRadius: 16,
-          padding: 24,
-          border: '1px solid rgba(var(--line))',
-          zIndex: 100,
-        }}
+        className='modal--centered point-details-modal'
       >
         <ModalHeader title={t('pointDetails')} onClose={onClose} />
         <div className='point-details-modal-container'>

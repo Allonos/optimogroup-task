@@ -1,4 +1,4 @@
-const DefaultSwitch = ({ defaultChecked, onChange }) => {
+const DefaultSwitch = ({ defaultChecked, onChange, styles }) => {
   return (
     <button
       type='button'
@@ -6,6 +6,7 @@ const DefaultSwitch = ({ defaultChecked, onChange }) => {
       aria-checked={defaultChecked}
       onClick={onChange}
       className={`switch${defaultChecked ? ' checked' : ''}`}
+      style={{ ...styles }}
     >
       <span className={`switch__thumb${defaultChecked ? ' checked' : ''}`} />
     </button>

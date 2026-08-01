@@ -1,4 +1,3 @@
-// src/game/scenes/PlayerScene.js
 import { Scene } from 'phaser';
 
 const START_SKEL_URL = '/spine/start/Ronaldo.skel';

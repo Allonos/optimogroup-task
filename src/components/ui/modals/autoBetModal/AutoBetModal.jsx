@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
+import { useModal } from '@/store/contexts/ModalContext';
 
 import DefaultModal from '@/components/ui/modals/DefaultModal';
 import ModalHeader from '@/components/ui/headers/modalHeader/ModalHeader';
@@ -8,7 +9,12 @@ import AutoPlayOnCard from './components/AutoPlayOnCard';
 
 const AutoBetModal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
+  const { setIsAnyModalOpen } = useModal();
   const [activeRound, setActiveRound] = useState(10);
+
+  useEffect(() => {
+    setIsAnyModalOpen(isOpen);
+  }, [isOpen, setIsAnyModalOpen]);
   const [increasedQuantity, setIncreasedQuantity] = useState(0.0);
   const [decreasedQuantity, setDecreasedQuantity] = useState(0.0);
   const [singleWinExceedsQuantity, setSingleWinExceedsQuantity] = useState(0.0);
@@ -17,15 +23,7 @@ const AutoBetModal = ({ isOpen, onClose }) => {
     <DefaultModal
       isOpen={isOpen}
       onClose={onClose}
-      className='modal--centered'
-      style={{
-        maxWidth: 580,
-        width: '100%',
-        borderRadius: 16,
-        padding: '24px',
-        border: '1px solid rgba(var(--line))',
-        zIndex: 100,
-      }}
+      className='modal--centered auto-bet-modal'
     >
       <ModalHeader title={t('autoBet')} onClose={onClose} />
       <div className='auto-bet-modal-container'>

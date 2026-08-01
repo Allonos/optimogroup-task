@@ -161,3 +161,34 @@
 .auto-play-card-header-checkbox:checked ~ .custom-checkbox-icon {
   transform: translate(-50%, -50%) scale(1);
 }
+.auto-bet-modal {
+  max-width: 580px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(var(--line));
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .modal--centered.auto-bet-modal {
+    display: block;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+    padding: 16px;
+    z-index: 1000;
+    position: fixed;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .modal--centered.auto-bet-modal.modal--open {
+    transform: translateY(0);
+  }
+}

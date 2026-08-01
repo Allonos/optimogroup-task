@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next';
 
 import HowToPlayExample from '@/components/ui/modals/howToPlayModal/components/HowToPlayExample';
-import { BETTING_PANELS_STEPS, ACTION_BUTTONS_STEPS } from '@/utils/constants/howToPlayConstants';
+import {
+  BETTING_PANELS_STEPS,
+  ACTION_BUTTONS_STEPS,
+} from '@/utils/constants/howToPlayConstants';
 
 import PlacingBetsImg from '@/assets/webp/placingBets.webp';
-
+import PlacingBetsRedMobileImg from '@/assets/webp/bet-place-red-button-mobile.png';
+import PlacingBetsGreenMobileImg from '@/assets/webp/bet-place-green-button-mobile.png';
 
 const GameInterfaceSection = () => {
   const { t } = useTranslation();
@@ -45,6 +49,18 @@ const GameInterfaceSection = () => {
           alt={t('placingBets')}
           className='placing-bets-img'
         />
+        <div className='placing-bets-img-mobile-container'>
+          <img
+            src={PlacingBetsGreenMobileImg}
+            alt={t('placingBets')}
+            className='placing-bets-img-mobile'
+          />
+          <img
+            src={PlacingBetsRedMobileImg}
+            alt={t('placingBets')}
+            className='placing-bets-img-mobile'
+          />
+        </div>
       </div>
     </>
   );

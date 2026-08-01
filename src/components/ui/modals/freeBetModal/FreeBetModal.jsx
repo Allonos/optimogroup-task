@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useRef, useLayoutEffect, useCallback } from 'react';
+import { useState, useRef, useLayoutEffect, useCallback, useEffect } from 'react';
+import { useModal } from '@/store/contexts/ModalContext';
 
 import BetMoney from '@/components/ui/modals/freeBetModal/components/BetMoney';
 import DefaultModal from '@/components/ui/modals/DefaultModal';
@@ -37,7 +38,12 @@ const useSwapHeight = (activeKey) => {
 
 const FreeBetModal = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
+  const { setIsAnyModalOpen } = useModal();
   const [isFullPayoutOpen, setIsFullPayoutOpen] = useState(false);
+
+  useEffect(() => {
+    setIsAnyModalOpen(isOpen);
+  }, [isOpen, setIsAnyModalOpen]);
   const [isPureProfitOpen, setIsPureProfitOpen] = useState(false);
   const [isBonusBalanceOpen, setIsBonusBalanceOpen] = useState(false);
 
@@ -53,16 +59,7 @@ const FreeBetModal = ({ isOpen, onClose }) => {
     <DefaultModal
       isOpen={isOpen}
       onClose={onClose}
-      className='modal--centered'
-      style={{
-        maxWidth: 542,
-        width: '100%',
-        borderRadius: 16,
-        padding: 24,
-        border: '1px solid rgba(var(--line))',
-        zIndex: 100,
-        maxHeight: isArchive ? '315px' : 'none',
-      }}
+      className='modal--centered free-bet-modal'
     >
       <div className='modal-overlay-swap' style={{ height: 20 }}>
         <div
