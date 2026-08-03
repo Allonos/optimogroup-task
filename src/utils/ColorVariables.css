@@ -44,4 +44,10 @@
   --orange-gradient-hover-start: 255, 133, 47, 1;
   --orange-gradient-hover-end: 217, 90, 0, 1;
   --active-grey: 45, 44, 53, 1;
+  --bet-place-cashout-left: 217, 90, 0, 1;
+  --bet-place-cashout-right: 255, 133, 47, 1;
+  --bet-place-cancel-left: 226, 43, 46, 1;
+  --bet-place-cancel-right: 255, 93, 95, 1;
+  --bet-place-free-bet-left: 152, 94, 255, 1;
+  --bet-place-free-bet-right: 103, 36, 221, 1;
 }

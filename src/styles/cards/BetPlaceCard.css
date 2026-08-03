@@ -80,6 +80,8 @@
 }
 
 .bet-place-button {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,6 +92,50 @@
   background: linear-gradient(to right, rgba(var(--green-gradient-start)), rgba(var(--green-gradient-end)));
   border-radius: 16px;
   cursor: pointer;
+}
+
+.bet-place-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(var(--green-gradient-end)), rgba(var(--green-gradient-start)));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: inherit;
+}
+
+.bet-place-button:hover::after {
+  opacity: 1;
+}
+
+.bet-place-button--cashout {
+  background: linear-gradient(to right, rgba(var(--bet-place-cashout-left)), rgba(var(--bet-place-cashout-right)));
+}
+
+.bet-place-button--cashout::after {
+  background: linear-gradient(to right, rgba(var(--bet-place-cashout-right)), rgba(var(--bet-place-cashout-left)));
+}
+
+.bet-place-button--cancel {
+  background: linear-gradient(to right, rgba(var(--bet-place-cancel-left)), rgba(var(--bet-place-cancel-right)));
+}
+
+.bet-place-button--cancel::after {
+  background: linear-gradient(to right, rgba(var(--bet-place-cancel-right)), rgba(var(--bet-place-cancel-left)));
+}
+
+.bet-place-button--free-bet {
+  background: linear-gradient(to right, rgba(var(--bet-place-free-bet-left)), rgba(var(--bet-place-free-bet-right)));
+}
+
+.bet-place-button--free-bet::after {
+  background: linear-gradient(to right, rgba(var(--bet-place-free-bet-right)), rgba(var(--bet-place-free-bet-left)));
+}
+
+.bet-place-button__label,
+.bet-place-button__amount {
+  position: relative;
+  z-index: 1;
 }
 
 .bet-place-button__label {
@@ -150,7 +196,7 @@
   gap: 12px;
   justify-content: space-between;
   flex: 1;
-  border: 1px solid rgba(var(--button-grey));
+  /* border: 1px solid rgba(var(--button-grey)); */
   border-radius: 50px;
   padding: 4px;
   max-height: 32px;
@@ -208,6 +254,8 @@
 
 .multiplier-stepper-container-auto-bet {
   width: 100%;
+  border: 1px solid rgba(var(--line));
+  border-radius: 50px;
 }
 
 @media (max-width: 1440px) {
@@ -281,12 +329,6 @@
 
   .quantity-value-not-fixed {
     display: block;
-  }
-
-  .multiplier-stepper-container-auto-bet {
-    border: 1px solid rgba(var(--button-grey));
-    width: 100%;
-    border-radius: 50px;
   }
 }
 

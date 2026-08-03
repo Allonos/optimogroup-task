@@ -45,7 +45,7 @@ const BetPlaceCard = () => {
       />
 
       <AutoBetModal
-        isOpen={isAutoBetModalOpen || isAutoCashoutModalOpen}
+        isOpen={isAutoBetModalOpen}
         onClose={() => {
           setIsAutoBetModalOpen(false);
           setIsAutoCashoutModalOpen(false);
