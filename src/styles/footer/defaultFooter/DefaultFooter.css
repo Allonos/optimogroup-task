@@ -1,0 +1,70 @@
+@import "../../../utils/ColorVariables.css";
+@import "../../../utils/FontSizeVariables.css";
+
+.footer-container {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.default-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 16px 6px 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-left span {
+  color: rgba(var(--text-grey));
+}
+
+.footer-right span {
+  color: rgba(var(--text-white));
+}
+
+.footer-seperator {
+  background-color: rgba(var(--line));
+  width: 1px;
+  height: 12px;
+}
+
+.default-footer-text {
+  font-size: var(--body-small);
+  font-weight: 600;
+  line-height: 15px;
+}
+
+.logo-icon {
+  width: 96px;
+  height: 24px;
+}
+
+@media (max-width: 1024px) {
+  .logo-icon {
+    width: 64px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .default-footer {
+    padding: 4px 8px;
+    background-color: rgba(var(--bg-dark-2));
+    margin-top: 4px;
+  }
+
+  .footer-container {
+    padding-bottom: 60px;
+  }
+
+  .default-footer-text {
+    font-size: var(--body-xs);
+    line-height: 12px;
+    font-weight: 500;
+  }
+}

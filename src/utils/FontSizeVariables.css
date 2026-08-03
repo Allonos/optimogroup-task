@@ -1,0 +1,15 @@
+:root {
+  --body-xs: 10px;
+  --body-small: 12px;
+  --body-compact: 13px;
+  --body: 14px;
+  --body-medium: 15px;
+  --body-lg: 16px;
+  --body-xl: 18px;
+  --body-2xl: 20px;
+  --body-3xl: 24px;
+  --body-40: 40px;
+  --body-52: 52px;
+  --body-60: 60px;
+  --body-80: 80px;
+}

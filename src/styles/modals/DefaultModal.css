@@ -1,0 +1,83 @@
+@import "../../utils/ColorVariables.css";
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  min-width: 200px;
+  min-height: 100px;
+  border-radius: 12px;
+  background-color: rgba(var(--bg-dark-2));
+  z-index: 11;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal--anchored {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+}
+
+.modal--centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.modal--centered.modal--open {
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.modal--fixed.modal--open {
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.modal--open {
+  display: block;
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.modal--fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; 
+}
+
+@media (max-width: 768px) {
+  .modal--fixed {
+    top: auto; 
+    bottom: 0;
+    left: 0;
+    display: block;
+    opacity: 1;
+    transform: translateY(100%);
+  }
+
+  .modal--fixed.modal--open {
+    transform: translateY(0);
+  }
+}

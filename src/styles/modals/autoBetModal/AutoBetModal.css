@@ -1,0 +1,211 @@
+@import "../../../utils/ColorVariables.css";
+@import '../../../utils/FontSizeVariables.css';
+
+.auto-bet-modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.auto-bet-modal-rounds-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auto-bet-modal-rounds-btn-content {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.auto-bet-modal-rounds-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8.5px 18px;
+  background-color: rgba(var(--bg-dark-3));
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(var(--bg-dark-3));
+}
+
+.auto-bet-modal-rounds-btn.active {
+  border: 1px solid rgba(var(--green));
+}
+
+.auto-bet-modal-rounds-number {
+  font-size: var(--body-2xl);
+  line-height: 22px;
+  font-weight: 700;
+  color: rgba(var(--text-white));
+}
+
+.auto-bet-modal-rounds-text {
+  font-size: var(--body-small);
+  font-weight: 600;
+  line-height: 15px;
+  color: rgba(var(--text-grey));
+}
+
+.auto-bet-modal-rounds-content-footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.auto-bet-modal-bet-text {
+  font-size: var(--body);
+  font-weight: 600;
+  line-height: 17px;
+  color: rgba(var(--text-white));
+}
+
+.auto-bet-modal-bet-text span {
+  color: rgba(var(--green));
+}
+
+.auto-play-container {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.auto-play-container h3 {
+  font-size: var(--body);
+  font-weight: 600;
+  line-height: 17px;
+  color: rgba(var(--text-white));
+}
+
+.auto-play-card {
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: rgba(var(--active-grey));
+  width: 100%;
+}
+
+.multiplier-stepper-container {
+  background-color: rgba(var(--bg-dark-2));
+  border-radius: 50px;
+}
+
+.auto-play-card-container {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.auto-play-card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auto-play-card-header span {
+  font-size: var(--body-small);
+  line-height: 15px;
+  font-weight: 600;
+  color: rgba(var(--text-grey));
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.auto-play-card-header-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid rgba(var(--line));
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.auto-play-card-header-checkbox:checked {
+  background-color: rgba(var(--green));
+  border-color: rgba(var(--green));
+}
+
+.auto-play-card-header-checkbox:hover {
+  border-color: rgba(255, 255, 255, 0.3)
+}
+
+.custom-checkbox-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 12px;
+  height: 12px;
+  color: #000;
+  pointer-events: none;
+  transition: transform 0.15s ease;
+}
+
+.auto-play-card-header-checkbox:checked ~ .custom-checkbox-icon {
+  transform: translate(-50%, -50%) scale(1);
+}
+.auto-bet-modal {
+  max-width: 580px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(var(--line));
+  z-index: 100;
+}
+
+.multiplier-stepper-container {
+  background-color: rgba(var(--bg-dark-2));
+  padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .modal--centered.auto-bet-modal {
+    display: block;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+    padding: 16px;
+    z-index: 1000;
+    position: fixed;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .modal--centered.auto-bet-modal.modal--open {
+    transform: translateY(0);
+  }
+
+  .auto-bet-modal-rounds-btn-content {
+    flex-wrap: wrap;
+  }
+
+  .auto-bet-modal-rounds-btn-content > * {
+    flex: 1 1 calc(50% - 2px);
+  }
+
+  .auto-play-card-container {
+    flex-direction: column;
+  }
+}

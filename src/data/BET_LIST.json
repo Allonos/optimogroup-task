@@ -1,0 +1,138 @@
+[
+  {
+    "id": 0,
+    "playerName": "G****t",
+    "bet": "20.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "my-bet"
+  },
+  {
+    "id": 1,
+    "playerName": "G****t",
+    "bet": "10.00",
+    "betWin": "244.62X",
+    "cashout": "0.00",
+    "status": "my-win"
+  },
+  {
+    "id": 2,
+    "playerName": "G****t",
+    "bet": "10.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "id": 3,
+    "playerName": "G****t",
+    "bet": "10.00",
+    "betWin": "244.62X",
+    "cashout": "0.00",
+    "status": "winner"
+  },
+  {
+    "id": 4,
+    "playerName": "M****o",
+    "bet": "5.00",
+    "betWin": "2.14X",
+    "cashout": "10.70",
+    "status": "winner"
+  },
+  {
+    "id": 5,
+    "playerName": "A****v",
+    "bet": "15.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "id": 6,
+    "playerName": "T****i",
+    "bet": "50.00",
+    "betWin": "1.87X",
+    "cashout": "93.50",
+    "status": "winner"
+  },
+  {
+    "id": 7,
+    "playerName": "D****e",
+    "bet": "2.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "id": 8,
+    "playerName": "K****a",
+    "bet": "100.00",
+    "betWin": "3.42X",
+    "cashout": "342.00",
+    "status": "winner"
+  },
+  {
+    "id": 9,
+    "playerName": "R****z",
+    "bet": "25.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "id": 10,
+    "playerName": "S****k",
+    "bet": "8.00",
+    "betWin": "12.05X",
+    "cashout": "96.40",
+    "status": "my-win"
+  },
+  {
+    "id": 11,
+    "playerName": "N****v",
+    "bet": "30.00",
+    "betWin": "1.02X",
+    "cashout": "30.60",
+    "status": "winner"
+  },
+  {
+    "id": 12,
+    "playerName": "L****e",
+    "bet": "12.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "id": 13,
+    "playerName": "V****n",
+    "bet": "60.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "id": 14,
+    "playerName": "O****z",
+    "bet": "3.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "id": 15,
+    "playerName": "V****n",
+    "bet": "60.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  },
+  {
+    "id": 16,
+    "playerName": "O****z",
+    "bet": "3.00",
+    "betWin": "0.00X",
+    "cashout": "-",
+    "status": "default"
+  }
+]

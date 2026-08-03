@@ -1,0 +1,24 @@
+.bets-list-tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  background-color: rgba(var(--bg-dark-2));
+  gap: 4px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.bets-list-tabs__indicator {
+  position: absolute;
+  left: 0;
+  height: 32px;
+  border-radius: 8px;
+  transform: translateY(50%);
+  background-color: rgba(var(--bg-dark-3));
+  transition: transform 0.25s ease, width 0.25s ease;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}

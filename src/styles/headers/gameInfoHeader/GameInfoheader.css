@@ -1,0 +1,27 @@
+@import "../../../utils/ColorVariables.css";
+@import "../../../utils/FontSizeVariables.css";
+
+.game-info-header {
+  padding: 10px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.game-info-header-item {
+  color: rgba(var(--text-grey));
+}
+
+.game-info-header-item-last {
+  text-align: right;
+}
+
+@media (max-width: 1280px) {
+  .game-info-header-item-bet {
+    width: 100px;
+    margin: 0 auto;
+  }
+}

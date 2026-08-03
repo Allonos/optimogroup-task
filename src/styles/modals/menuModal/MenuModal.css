@@ -1,0 +1,38 @@
+@import "../../../utils/FontSizeVariables.css";
+@import "../../../utils/ColorVariables.css";
+
+.menu-modal__item-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  gap: 10px
+}
+
+.menu-modal__item {
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
+.menu-modal__item span {
+  font-size: var(--body);
+  line-height: 17px;
+  font-weight: 600;
+  color: rgba(var(--text-grey));
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-modal__item.active span {
+  color: rgba(var(--text-white));
+}
+
+.menu-modal__item.plain {
+  cursor: pointer;
+}
+
+.menu-modal__item .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}

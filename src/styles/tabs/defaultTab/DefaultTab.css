@@ -1,0 +1,23 @@
+@import "../../../utils/ColorVariables.css";
+@import "../../../utils/FontSizeVariables.css";
+
+.default-tab {
+  position: relative;
+  z-index: 1;
+  padding: 8.5px 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+.default-tab span {
+  position: relative;
+  z-index: 1;
+  color: rgba(var(--text-white));
+}
+
+.default-tab.active {
+  background-color: transparent;
+}

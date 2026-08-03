@@ -1,0 +1,89 @@
+@import "../../../utils/ColorVariables.css";
+
+.game-header {
+  padding: 12px 8px;
+  background-color: rgba(var(--bg-dark-2));
+  border-radius: 12px;
+  position: relative;
+  min-height: 48px;
+}
+
+.game-header-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  overflow: hidden;
+  max-height: 40px;
+  padding: 12px 32px 12px 8px;
+  align-content: flex-start;
+  transition: max-height 0.3s ease;
+  background-color: rgba(var(--bg-dark-2));
+  border-radius: 12px;
+}
+
+.game-header--open .game-header-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  max-height:  500px;
+  background-color: rgba(var(--bg-dark-2));
+  border-radius: 12px;
+  padding: 12px 32px 12px 8px;
+  overflow: hidden;
+}
+
+.game-header-track-item {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.game-header-arrow {
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.game-header-arrow svg {
+  transition: transform 0.2s ease;
+}
+
+.game-header-arrow--open svg {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1024px) {
+  .game-header {
+    min-height: 30px;
+  }
+
+  .game-header-track {
+    max-height: 26px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .game-header--open .game-header-track {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .game-header-arrow  {
+    top: 2px;
+  }
+}

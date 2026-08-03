@@ -1,0 +1,117 @@
+.bets-list-tabs-container {
+  max-width: 410px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-list-header {
+  position: relative;
+}
+
+.stats-list-header-tabs {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(var(--bg-dark-1));
+}
+
+.bets-list-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+  padding: 12px;
+  background-color: rgba(var(--bg-dark-3));
+  border-radius: 8px;
+}
+
+.bets-list-footer__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bets-list-footer__label {
+  color: rgba(var(--text-disabled));
+}
+
+.bets-list-footer__value {
+  color: rgba(var(--text-white));
+}
+
+.bets-list-footer__item:last-child {
+  text-align: right;
+}
+
+.chart-container {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.bets-list-tabs-container__header {
+  display: none;
+}
+
+@media (max-width: 1440px) {
+  .bets-list-tabs-container {
+    max-width: 348px;
+  }
+
+  
+}
+
+@media (max-width: 1280px) {
+  .bets-list-tabs-container__header {
+    display: block;
+  }
+
+  .bets-list-tabs-container__footer {
+    display: none;
+  }
+  .bets-list-tabs-container {
+    max-width: 100%;
+  }
+
+  .bets-list-footer {
+    margin-bottom: 8px;
+  }
+
+  .stats-list-header {
+    display: none;
+  }
+
+  .chart-container {
+    height: 432px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bets-list-footer {
+    position: fixed;
+    bottom: -10px;
+    width: 100%;
+    z-index: 100;
+    left: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .bets-list-footer.hidden {
+    position: fixed;
+    bottom: -10px;
+    width: 100%;
+    z-index: 100;
+    left: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: none;
+  }
+
+  .bets-list-tabs-container {
+    padding: 0 8px;
+  }
+}
