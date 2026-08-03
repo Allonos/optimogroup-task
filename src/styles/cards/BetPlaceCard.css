@@ -155,6 +155,7 @@
   padding: 4px;
   max-height: 32px;
   height: 100%;
+  --disabled-icon-color: rgba(var(--button-grey-2));
 }
 
 .multiplier-btn {
@@ -205,6 +206,10 @@
   background: linear-gradient(to right, rgba(var(--green-gradient-end)), rgba(var(--green-gradient-start)));
 }
 
+.multiplier-stepper-container-auto-bet {
+  width: 100%;
+}
+
 @media (max-width: 1440px) {
   .bet-place-button {
     max-width: 174px;
@@ -236,7 +241,6 @@
     max-height: 24px;
     padding: 4px 2px;
     border: none;
-    background: rgba(var(--bg-dark-3));
   }
 
   .multiplier-btn {
@@ -278,6 +282,12 @@
   .quantity-value-not-fixed {
     display: block;
   }
+
+  .multiplier-stepper-container-auto-bet {
+    border: 1px solid rgba(var(--button-grey));
+    width: 100%;
+    border-radius: 50px;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -318,6 +328,16 @@
 
   .bet-place-bottom {
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .multiplier-control {
+    --disabled-icon-color: rgba(var(--icon-grey));
+  }
+
+  .multiplier-btn {
+    background-color: rgba(var(--active-grey));
   }
 }
 

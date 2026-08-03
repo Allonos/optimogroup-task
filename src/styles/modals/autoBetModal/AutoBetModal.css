@@ -170,6 +170,11 @@
   z-index: 100;
 }
 
+.multiplier-stepper-container {
+  background-color: rgba(var(--bg-dark-2));
+  padding: 4px;
+}
+
 @media (max-width: 768px) {
   .modal--centered.auto-bet-modal {
     display: block;
@@ -190,5 +195,17 @@
 
   .modal--centered.auto-bet-modal.modal--open {
     transform: translateY(0);
+  }
+
+  .auto-bet-modal-rounds-btn-content {
+    flex-wrap: wrap;
+  }
+
+  .auto-bet-modal-rounds-btn-content > * {
+    flex: 1 1 calc(50% - 2px);
+  }
+
+  .auto-play-card-container {
+    flex-direction: column;
   }
 }

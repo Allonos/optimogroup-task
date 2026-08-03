@@ -168,4 +168,8 @@
   .modal--centered.point-details-modal.modal--open {
     transform: translateY(0);
   }
+
+  .point-details-modal-container {
+    margin-top: -15px;
+  }
 }

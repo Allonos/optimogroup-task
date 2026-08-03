@@ -1,3 +1,12 @@
+.total-win-modal {
+  max-width: 370px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 24px 24px 68px 24px;
+  border: 1px solid rgba(var(--line));
+  z-index: 100;
+}
+
 .total-win-modal-container {
   display: flex;
   flex-direction: column;
@@ -44,4 +53,11 @@
   font-weight: 700;
   color: rgba(var(--green));
   text-align: end;
+}
+
+@media (max-width: 768px) {
+  .total-win-modal {
+    padding: 24px 24px 40px 24px;
+    max-width: 336px;
+  }
 }

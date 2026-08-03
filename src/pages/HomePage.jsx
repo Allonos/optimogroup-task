@@ -14,7 +14,7 @@ const ROUND_DURATION_MS = 5000;
 
 const HomePage = () => {
   const [isGetBonusBet, setIsGetBonusBet] = useState(false);
-  const [isGetFreeBet, setGetIsFreeBet] = useState(false);
+  const [isGetFreeBet, setGetIsFreeBet] = useState(true);
   const [totalFreeBetWin, setTotalFreeBetWin] = useState(false);
 
   const [isRoundActive, setIsRoundActive] = useState(true);

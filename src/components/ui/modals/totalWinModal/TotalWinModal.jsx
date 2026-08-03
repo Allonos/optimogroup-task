@@ -10,15 +10,7 @@ const TotalWinModal = ({ onClose, isOpen }) => {
     <DefaultModal
       isOpen={isOpen}
       onClose={onClose}
-      className='modal--centered'
-      style={{
-        maxWidth: 370,
-        width: '100%',
-        borderRadius: 16,
-        padding: '24px 24px 68px 24px',
-        border: '1px solid rgba(var(--line))',
-        zIndex: 100,
-      }}
+      className='modal--centered total-win-modal'
     >
       <div className='total-win-modal-container' onClick={onClose}>
         <BonusModalHeader onClose={onClose} />

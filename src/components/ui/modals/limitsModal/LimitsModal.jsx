@@ -10,15 +10,7 @@ const LimitsModal = ({ isOpen, onClose }) => {
     <DefaultModal
       isOpen={isOpen}
       onClose={onClose}
-      className='modal--centered'
-      style={{
-        maxWidth: 768,
-        width: '100%',
-        borderRadius: 16,
-        padding: 24,
-        border: '1px solid rgba(var(--line))',
-        zIndex: 100,
-      }}
+      className='modal--centered limits__modal'
     >
       <ModalHeader title='Limits' onClose={onClose} />
       <div className='limits__modal__content'>

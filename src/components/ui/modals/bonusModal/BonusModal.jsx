@@ -9,15 +9,7 @@ const BonusModal = ({ type, isOpen, onClose }) => {
     <DefaultModal
       isOpen={isOpen}
       onClose={onClose}
-      className='modal--centered'
-      style={{
-        maxWidth: 370,
-        width: '100%',
-        borderRadius: 16,
-        padding: '24px 24px 68px 24px',
-        border: '1px solid rgba(var(--line))',
-        zIndex: 100,
-      }}
+      className='modal--centered bonus-modal'
     >
       <div className='bonus-modal-container'>
         <BonusModalHeader onClose={onClose} />

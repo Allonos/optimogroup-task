@@ -50,12 +50,15 @@ const AutoBetControls = ({
             onChange={handleAutoCashoutChange}
           />
         </div>
-        <MultiplierStepper
-          multiplier={multiplier}
-          onIncrease={onIncreaseMultiplier}
-          onDecrease={onDecreaseMultiplier}
-          autoCashoutEnabled={autoCashoutEnabled}
-        />
+        <div className='multiplier-stepper-container-auto-bet'>
+          <MultiplierStepper
+            multiplier={multiplier}
+            onIncrease={onIncreaseMultiplier}
+            onDecrease={onDecreaseMultiplier}
+            autoCashoutEnabled={autoCashoutEnabled}
+            onModal={false}
+          />
+        </div>
       </div>
     </div>
   );

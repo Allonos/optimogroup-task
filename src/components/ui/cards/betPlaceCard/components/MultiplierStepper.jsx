@@ -5,6 +5,7 @@ const MultiplierStepper = ({
   multiplier,
   onIncrease,
   onDecrease,
+  onModal,
 }) => {
   const isMinusActive = multiplier > 2.0 && autoCashoutEnabled === true;
   const isPlusActive = autoCashoutEnabled === true;
@@ -22,7 +23,7 @@ const MultiplierStepper = ({
           style={{
             '--icon-color': isMinusActive
               ? 'rgba(var(--icon-white))'
-              : 'rgba(var(--button-grey-2))',
+              : 'var(--disabled-icon-color)',
           }}
         />
       </button>
@@ -42,7 +43,7 @@ const MultiplierStepper = ({
           style={{
             '--icon-color': isPlusActive
               ? 'rgba(var(--icon-white))'
-              : 'rgba(var(--button-grey-2))',
+              : 'var(--disabled-icon-color)',
           }}
         />
       </button>
