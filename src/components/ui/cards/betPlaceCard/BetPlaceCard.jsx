@@ -11,13 +11,17 @@ const BetPlaceCard = ({
   gameMultiplier = 1,
   winAmount = null,
   isFree = false,
+  freeBetsCount = 0,
+  freeBetsTotal = 0,
+  freeBetActive = false,
   onPlaceBet,
   onCancelBet,
   onCashout,
   onSetQuantity,
 }) => {
   const presets = [2.0, 5.0, 10.0, 20.0]
-  const isLocked = betState === 'queued' || betState === 'active' || isFree;
+  const lockedByFreeBetSession = freeBetActive && !isFree;
+  const isLocked = betState === 'queued' || betState === 'active' || isFree || lockedByFreeBetSession;
 
   const [autoBetEnabled, setAutoBetEnabled] = useState(false)
   const [isAutoBetModalOpen, setIsAutoBetModalOpen] = useState(false)
@@ -26,17 +30,24 @@ const BetPlaceCard = ({
   const [autoCashoutMultiplier, setAutoCashoutMultiplier] = useState(2.0)
 
   const idleButtonState = isFree ? 'free-bet' : 'bet';
-  const buttonState = betState === 'idle' ? idleButtonState : (BUTTON_STATE_MAP[betState] ?? 'bet');
+
+  const buttonState = isFree
+    ? (betState === 'active' ? 'cashout' : 'free-bet') 
+    : (betState === 'idle' ? idleButtonState : (BUTTON_STATE_MAP[betState] ?? 'bet'));
+
   const buttonAmount = betState === 'active'
     ? +(quantity * gameMultiplier).toFixed(2)
     : betState === 'cashedout' ? (winAmount ?? quantity)
     : quantity;
-  const handleButtonClick = betState === 'queued' ? onCancelBet
+
+  const canPlaceBet = (betState === 'idle' || betState === 'cashedout') && !lockedByFreeBetSession && !isFree;
+  const handleButtonClick = betState === 'queued' && !isFree ? onCancelBet   // added `&& !isFree`
     : betState === 'active' ? onCashout
-    : onPlaceBet;
+    : canPlaceBet ? onPlaceBet
+    : undefined;
 
   return (
-    <div className='bet-place-container'>
+    <div className={`bet-place-container ${isFree ? 'bet-place-container--free-bet' : ''}${lockedByFreeBetSession ? ' bet-place-container--locked' : ''}`}>
       <BetControls
         quantity={quantity}
         onIncrease={() => !isLocked && onSetQuantity(quantity + 1)}
@@ -46,6 +57,9 @@ const BetPlaceCard = ({
         buttonState={buttonState}
         buttonAmount={buttonAmount}
         onButtonClick={handleButtonClick}
+        isFreeBet={isFree}
+        freeBetsCount={freeBetsCount}
+        freeBetsTotal={freeBetsTotal}
       />
 
       <div className='bet-place-divider' />

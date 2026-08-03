@@ -12,8 +12,13 @@
   border-radius: 16px;
   background-color: rgba(var(--bg-dark-2));
   width: 100%;
-  padding: 12px 16px;
+  padding: 16px;
   max-height: 156px;
+}
+
+.bet-place-container--free-bet {
+  padding: 15px;
+  border: 1px solid rgba(var(--bet-place-free-bet-left));
 }
 
 .bet-place-divider {
@@ -25,6 +30,25 @@
   justify-content: space-between;
   gap: 16px;
   width: 100%;
+  max-height: 72px;
+}
+
+.free-bet-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid rgba(var(--button-grey));
+  padding: 4px 16px;
+  border-radius: 50px;
+  height: 36px;
+}
+
+.free-bet-info-container span {
+  font-size: var(--body);
+  font-weight: 600;
+  color: rgba(var(--text-grey));
+  line-height: 17px;
 }
 
 .change-quantity-container {
@@ -334,7 +358,8 @@
 
 @media (max-width: 1280px) {
   .bet-place-container {
-    padding: 16px 41px;
+    padding: 16px;
+    max-height: 156px;
   }
 
   .change-by-numbers button {
@@ -353,6 +378,7 @@
   .bet-place-container {
     padding: 12px;
     gap: 12px;
+    max-height: 144px;
   }
 
   .bet-place-top {
@@ -384,19 +410,21 @@
 }
 
 @media (max-width: 576px) {
-  .bet-place-button {
-    width: 149px;
-  }
-
   .change-by-numbers button {
     padding: 8.5px 18px;
   }
 
+  .bet-place-bottom {
+    gap: 19px;
+  }
+}
+
+@media (max-width: 480px) {
   .change-quantity-container {
     max-width: 174px;
   }
 
-  .bet-place-bottom {
-    gap: 19px;
+  .bet-place-button {
+    width: 149px;
   }
 }

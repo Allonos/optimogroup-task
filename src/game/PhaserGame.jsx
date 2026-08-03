@@ -4,7 +4,7 @@ import { SpinePlugin } from '@esotericsoftware/spine-phaser-v4';
 import BeachScene from './scenes/BeachScene';
 import PlayerScene from './scenes/PlayerScene';
 
-let gameInstance = null; // module-scoped, NOT reset by React remounts
+let gameInstance = null;
 
 const PhaserGame = ({ className, isRoundActive }) => {
   const containerRef = useRef(null);
@@ -33,10 +33,14 @@ const PhaserGame = ({ className, isRoundActive }) => {
     }
   }, []);
 
-  const wasRoundActive = useRef(true);
+  const wasRoundActive = useRef(false);
   useEffect(() => {
-    if (wasRoundActive.current && !isRoundActive) {
-      const scene = gameInstance?.scene.getScene('PlayerScene');
+    const scene = gameInstance?.scene.getScene('PlayerScene');
+    if (!wasRoundActive.current && isRoundActive) {
+      if (scene && typeof scene.triggerStart === 'function') {
+        scene.triggerStart();
+      }
+    } else if (wasRoundActive.current && !isRoundActive) {
       if (scene && typeof scene.triggerCatch === 'function') {
         scene.triggerCatch();
       }

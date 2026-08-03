@@ -16,7 +16,7 @@
 }
 
 .free-bet-label {
-  font-size: var(--body-sm);
+  font-size: var(--body-small);
   font-weight: 600;
   text-transform: uppercase;
   line-height: 15px;

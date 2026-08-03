@@ -9,10 +9,6 @@ export default class StartScene extends Scene {
   }
 
   preload() {
-    console.log(
-      '%c[StartScene] preload() called',
-      'background: red; color: white; font-size: 16px',
-    );
     this.load.spineBinary('start-skel', SKEL_URL);
     this.load.spineAtlas('start-atlas', ATLAS_URL, true);
   }

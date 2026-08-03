@@ -7,6 +7,7 @@ const BOUNCE_ATLAS_URL = '/spine/bouncing/RonaldoBounce.atlas';
 const CATCH_SKEL_URL = '/spine/catching/RonaldoCatching.skel';
 const CATCH_ATLAS_URL = '/spine/catching/RonaldoCatching.atlas';
 const CATCH_ANIM_NAME = 'dachera';
+const START_ANIM_TIME_SCALE = 0.85;
 
 const MARGIN = 0.55;
 const PAN_X = 0;
@@ -36,9 +37,7 @@ export default class PlayerScene extends Scene {
     const startAnimName = this.startPlayer.skeleton.data.animations[0]?.name;
     this.bounceAnimName = this.bouncePlayer.skeleton.data.animations[0]?.name;
 
-    if (startAnimName) {
-      this.startPlayer.animationState.setAnimation(0, startAnimName, false);
-    }
+    this.startAnimName = startAnimName;
 
     const boundsCenterLocalX =
       -this.startPlayer.offsetX + this.startPlayer.width / 2;
@@ -67,16 +66,30 @@ export default class PlayerScene extends Scene {
     this.catchPlayer.setPosition(this.startPlayer.x, this.startPlayer.y);
     this.catchPlayer.setVisible(false);
 
-    // which player is currently the "live" one on screen - triggerCatch()
-    // needs this to know whose transform to copy from
     this.activePlayer = this.startPlayer;
-    this.roundEnded = false; // guards against triggerCatch firing twice
+    this.roundEnded = false;
 
     window.startPlayer = this.startPlayer;
     window.bouncePlayer = this.bouncePlayer;
     window.catchPlayer = this.catchPlayer;
+  }
 
-    if (startAnimName) {
+  triggerStart() {
+    this.roundEnded = false;
+
+    this.bouncePlayer.setVisible(false);
+    this.catchPlayer.setVisible(false);
+    this.startPlayer.setVisible(true);
+    this.activePlayer = this.startPlayer;
+
+    this.startPlayer.animationState.clearListeners();
+    if (this.startAnimName) {
+      const entry = this.startPlayer.animationState.setAnimation(
+        0,
+        this.startAnimName,
+        false,
+      );
+      entry.timeScale = START_ANIM_TIME_SCALE;
       this.startPlayer.animationState.addListener({
         complete: () => this.goToBounce(),
       });
@@ -105,9 +118,8 @@ export default class PlayerScene extends Scene {
     }
   }
 
-  // Called from React (via PhaserGame) when the round timer ends.
   triggerCatch() {
-    if (this.roundEnded) return; // avoid double-trigger (e.g. React StrictMode)
+    if (this.roundEnded) return;
     this.roundEnded = true;
 
     this.catchPlayer.setScale(

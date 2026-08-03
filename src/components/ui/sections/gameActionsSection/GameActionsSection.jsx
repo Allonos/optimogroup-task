@@ -3,6 +3,9 @@ import BetPlaceCard from '@/components/ui/cards/betPlaceCard/BetPlaceCard';
 const GameActionsSection = ({
   bets,
   gameMultiplier,
+  freeBetsCount,
+  freeBetsTotal,
+  freeBetActive,
   onPlaceBet,
   onCancelBet,
   onCashout,
@@ -18,6 +21,9 @@ const GameActionsSection = ({
           gameMultiplier={gameMultiplier}
           winAmount={bet.winAmount}
           isFree={bet.isFree ?? false}
+          freeBetsCount={freeBetsCount}
+          freeBetsTotal={freeBetsTotal}
+          freeBetActive={freeBetActive}
           onPlaceBet={() => onPlaceBet(i)}
           onCancelBet={() => onCancelBet(i)}
           onCashout={() => onCashout(i)}

@@ -13,12 +13,12 @@ import TotalWinModal from '@/components/ui/modals/totalWinModal/TotalWinModal';
 import PhaserGame from '../game/PhaserGame';
 import { FreeBetIcon } from '@/assets/icons/SvgTojsx';
 import FreeBetModal from '@/components/ui/modals/freeBetModal/FreeBetModal'
-import { CloseIcon, SuccessIcon } from '../assets/icons/SvgTojsx';
+import { CloseIcon, SuccessIcon } from '@/assets/icons/SvgTojsx';
 
 const TICK_MS = 120;
 const MULTIPLIER_STEP = 0.01;
 const MIN_CRASH_MULTIPLIER = 1.01;
-const MAX_CRASH_MULTIPLIER = 2;
+const MAX_CRASH_MULTIPLIER = 1;
 const COUNTDOWN_MS = 5000;
 const COUNTDOWN_TICK_MS = 50;
 
@@ -42,17 +42,31 @@ const HomePage = () => {
     { state: 'idle', quantity: 1.0, winAmount: null, isFree: false, showWin: false },
     { state: 'idle', quantity: 1.0, winAmount: null, isFree: false, showWin: false },
   ]);
+  const [freeBetsCount, setFreeBetsCount] = useState(0);
+  const [freeBetsTotal, setFreeBetsTotal] = useState(0);
+  const [freeBetsTotalWin, setFreeBetsTotalWin] = useState(0);
 
   useEffect(() => {
     if (phase !== 'countdown') return;
     crashMultiplierRef.current = getRandomCrashMultiplier();
     setCountdownProgress(1);
     setMultiplier(0);
-    setBets(prev => prev
-      .map(b => b.state === 'lost' || b.state === 'cashedout'
-        ? { ...b, state: 'idle', winAmount: null, isFree: false, showWin: false }
-        : b)
-    );
+    const usedFree = bets.filter(b => b.isFree && (b.state === 'lost' || b.state === 'cashedout')).length;
+    const remaining = Math.max(0, freeBetsCount - usedFree);
+    if (usedFree > 0) setFreeBetsCount(remaining);
+    if (remaining === 0 && freeBetsCount > 0) setTotalFreeBetWin(true);
+    setBets(prev => {
+      const reset = prev.map(b =>
+        b.state === 'lost' || b.state === 'cashedout'
+          ? { ...b, state: 'idle', winAmount: null, isFree: false, showWin: false }
+          : b
+      );
+      if (remaining > 0 && !reset.some(b => b.isFree)) {
+        const idx = reset.findIndex(b => b.state === 'idle');
+        if (idx !== -1) return reset.map((b, i) => i === idx ? { ...b, isFree: true, state: 'queued' } : b);
+      }
+      return reset;
+    });
     const totalSteps = COUNTDOWN_MS / COUNTDOWN_TICK_MS;
     let step = 0;
     const interval = setInterval(() => {
@@ -93,13 +107,29 @@ const HomePage = () => {
   const placeBet = (i) => setBets(prev => prev.map((b, j) =>
     j === i && ['idle', 'lost', 'cashedout'].includes(b.state) ? { ...b, state: 'queued', winAmount: null } : b
   ));
-  const cancelBet = (i) => setBets(prev => prev.map((b, j) =>
-    j === i && b.state === 'queued' ? { ...b, state: 'idle' } : b
-  ));
+
+  const cancelBet = (i) => {
+    const isCancellingFree = bets[i]?.state === 'queued' && bets[i]?.isFree;
+    if (isCancellingFree) {
+      const newCount = Math.max(0, freeBetsCount - 1);
+      setFreeBetsCount(newCount);
+      if (newCount === 0) setTotalFreeBetWin(true);
+      setBets(prev => prev.map((b, j) =>
+        j === i && b.state === 'queued' ? { ...b, state: 'idle', isFree: newCount > 0 } : b
+      ));
+    } else {
+      setBets(prev => prev.map((b, j) =>
+        j === i && b.state === 'queued' ? { ...b, state: 'idle' } : b
+      ));
+    }
+  };
   const cashout = (i) => {
+    const bet = bets[i];
+    const winAmount = +(bet?.quantity * multiplier).toFixed(2);
+    if (bet?.isFree) setFreeBetsTotalWin(prev => +(prev + winAmount).toFixed(2));
     setBets(prev => prev.map((b, j) => {
       if (j !== i || b.state !== 'active') return { ...b, showWin: false };
-      return { ...b, state: 'cashedout', winAmount: +(b.quantity * multiplier).toFixed(2), showWin: true };
+      return { ...b, state: 'cashedout', winAmount, showWin: true };
     }));
     setTimeout(() => {
       setBets(prev => prev.map((b, j) => j === i ? { ...b, showWin: false } : b));
@@ -114,8 +144,12 @@ const HomePage = () => {
 
   const activateFreeBet = () => {
     setFreeBetModal(false);
+    setFreeBetsCount(5);
+    setFreeBetsTotal(5);
+    setFreeBetsTotalWin(0);
     setBets(prev => {
-      const idx = prev.findIndex(b => b.state === 'idle' && !b.isFree);
+      if (prev.some(b => b.isFree)) return prev;
+      const idx = prev.findIndex(b => b.state === 'idle');
       if (idx === -1) return prev;
       return prev.map((b, i) => i === idx ? { ...b, isFree: true, state: 'queued' } : b);
     });
@@ -124,6 +158,7 @@ const HomePage = () => {
   const showLoseOverlay = phase === 'crashed' && bets.some(b => b.state === 'lost');
   const isRoundActive = phase === 'running';
   const countdownSeconds = Math.ceil(countdownProgress * 5);
+  const isFreeBetActive = freeBetsCount > 0;
 
   return (
     <GameLayout>
@@ -170,17 +205,24 @@ const HomePage = () => {
               </span>
             )}
           </div>
-          <button className='free-bet-container' onClick={() => setFreeBetModal(true)}>
+          <button
+            className={`free-bet-container${isFreeBetActive ? ' free-bet-container--disabled' : ''}`}
+            onClick={() => !isFreeBetActive && setFreeBetModal(true)}
+            disabled={isFreeBetActive}
+          >
             <FreeBetIcon />
             <span className='free-bet-label'>{t('freeBet')}</span>
             <div className='free-bet-value-container'>
-              <span className='free-bet-value'>127</span>
+              <span className='free-bet-value'>{isFreeBetActive ? freeBetsCount : 127}</span>
             </div>
           </button>
         </div>
         <GameActionsSection
           bets={bets}
           gameMultiplier={multiplier}
+          freeBetsCount={freeBetsCount}
+          freeBetsTotal={freeBetsTotal}
+          freeBetActive={isFreeBetActive}
           onPlaceBet={placeBet}
           onCancelBet={cancelBet}
           onCashout={cashout}
@@ -201,6 +243,7 @@ const HomePage = () => {
       <TotalWinModal
         isOpen={totalFreeBetWin}
         onClose={() => setTotalFreeBetWin(false)}
+        amount={freeBetsTotalWin}
       />
       <FreeBetModal isOpen={freeBetModal} onClose={() => setFreeBetModal(false)} onPlayNow={activateFreeBet} />
     </GameLayout>

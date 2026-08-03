@@ -263,12 +263,17 @@ body,
   line-height: 15px;
   font-weight: 600;
   color: rgba(var(--text-white));
+  white-space: nowrap;
 }
 
 .game-win-amount-popup {
   padding: 8.5px 10px;
   background: linear-gradient(to right, rgba(var(--green-gradient-start)), rgba(var(--green-gradient-end)));
   border-radius: 30px;
+}
+
+.game-win-amount-popup span {
+  text-wrap: nowrap;
 }
 
 .game-win-amount-popup {
@@ -353,4 +358,13 @@ body,
   .game-layout-footer {
     display: none;
   }
+
+  .game-multiplier-value {
+    font-size: var(--body-52);
+    line-height: 52px;
+  }
+
+  .game-win-popups {
+    top: -15%;
+   }
 }
