@@ -1,0 +1,42 @@
+@import "../../utils/ColorVariables.css";
+@import "../../utils/FontSizeVariables.css";
+
+.free-bet-container {
+  position: absolute;
+  bottom: 20px;
+  right: 16px;
+  padding: 8px 10px 8px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 100px;
+  background: linear-gradient(to right, rgba(var(--green-gradient-start)), rgba(var(--green-gradient-end)));
+  cursor: pointer;
+  border: none;
+}
+
+.free-bet-label {
+  font-size: var(--body-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 15px;
+  color: rgba(var(--text-white));
+}
+
+.free-bet-value-container {
+  padding: 1px 6px;
+  border-radius: 30px;
+  border: 0.5px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  
+}
+
+.free-bet-value {
+  font-size: var(--body-xs);
+  font-weight: 600;
+  line-height: 12px;
+  color: rgba(var(--text-white));
+  text-align: center;
+  align-self: center;
+}

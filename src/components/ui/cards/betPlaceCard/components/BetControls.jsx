@@ -8,7 +8,9 @@ const BetControls = ({
   onDecrease,
   presets,
   onSelectPreset,
-  onPlaceBet,
+  buttonState,
+  buttonAmount,
+  onButtonClick,
 }) => {
   return (
     <div className='bet-place-top'>
@@ -20,7 +22,7 @@ const BetControls = ({
         />
         <QuantityPresets presets={presets} onSelect={onSelectPreset} />
       </div>
-      <PlaceBetButton amount={quantity} onClick={onPlaceBet} />
+      <PlaceBetButton state={buttonState} amount={buttonAmount} onClick={onButtonClick} />
     </div>
   );
 };

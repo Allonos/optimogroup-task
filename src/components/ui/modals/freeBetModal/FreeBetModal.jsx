@@ -8,7 +8,7 @@ import ModalHeader from '@/components/ui/headers/modalHeader/ModalHeader';
 import FreeBetsContainer from '@/components/ui/modals/freeBetModal/components/FreeBetsContainer';
 import { HistoryIcon, LongArrowIcon } from '@/assets/icons/SvgTojsx';
 
-const FreeBetModal = ({ isOpen, onClose }) => {
+const FreeBetModal = ({ isOpen, onClose, onPlayNow }) => {
   const { t } = useTranslation();
   const { setIsAnyModalOpen } = useModal();
   const [isFullPayoutOpen, setIsFullPayoutOpen] = useState(false);
@@ -89,7 +89,7 @@ const FreeBetModal = ({ isOpen, onClose }) => {
             />
             <span>{t('archive')}</span>
           </button>
-          <button className='free-bets-modal-actions-play' onClick={onClose}>
+          <button className='free-bets-modal-actions-play' onClick={onPlayNow ?? onClose}>
             <span>{t('playNow')}</span>
           </button>
         </div>

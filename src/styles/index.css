@@ -26,6 +26,7 @@
 @import "../styles/modals/bonusModal/BonusModal.css";
 @import "../styles/modals/totalWinModal/TotalWinModal.css";
 @import "../styles/modals/autoBetModal/AutoBetModal.css";
+@import "../styles/buttons/FreeBetButton.css";
 
 *,
 *::before,
@@ -140,6 +141,151 @@ body,
     background: linear-gradient(to top, rgba(var(--scrollbar-light)), rgba(var(--scrollbar-dark))); 
     border-radius: 5px;
   }
+}
+
+.home-page-game {
+  position: relative;
+}
+
+.lose-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(var(--red-overlay-gradient-start)), rgba(var(--red-overlay-gradient-end)));
+  pointer-events: none;
+  z-index: 2;
+}
+
+.game-win-display {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 3;
+}
+
+.game-win-amount {
+  font-size: var(--body-40);
+  font-family: 'Luckiest Guy', sans-serif;
+  color: rgba(var(--green));
+  white-space: nowrap;
+}
+
+.game-multiplier-container {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.game-multiplier-value {
+  font-size: var(--body-80);
+  font-family: 'Luckiest Guy', sans-serif;
+  line-height: 60px;
+  color: rgba(var(--text-white));
+}
+
+.game-multiplier-value--lost {
+  color: rgba(var(--red-lose-text));
+}
+
+.game-multiplier-x {
+  font-size: var(--body-40);
+}
+
+.game-multiplier-timer {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.game-multiplier-track {
+  width: 196px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.game-multiplier-progress {
+  height: 100%;
+  background: linear-gradient(to right, rgba(var(--green-gradient-start)), rgba(var(--green-gradient-end)));
+  border-radius: 50px;
+  transition: width 50ms linear;
+}
+
+.game-multiplier-next-round {
+  font-size: var(--body-lg);
+  line-height: 19px;
+  font-weight: 700;
+  color: rgba(var(--text-white));
+  text-align: center;
+}
+
+.game-win-popups {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 3;
+}
+
+.game-win-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 12px 8px 16px;
+  background-color: rgba(var(--green-dark));
+  border-radius: 34px;
+}
+
+.game-win-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.game-win-left span {
+  font-size: var(--body-small);
+  line-height: 15px;
+  font-weight: 600;
+  color: rgba(var(--text-white));
+}
+
+.game-win-amount-popup {
+  padding: 8.5px 10px;
+  background: linear-gradient(to right, rgba(var(--green-gradient-start)), rgba(var(--green-gradient-end)));
+  border-radius: 30px;
+}
+
+.game-win-amount-popup {
+  font-size: var(--body-small);
+  line-height: 15px;
+  font-weight: 600;
+  color: rgba(var(--text-white));
+}
+
+.game-win-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.close-icon-popup {
+  cursor: pointer;
 }
 
 @media (max-width: 1440px) {

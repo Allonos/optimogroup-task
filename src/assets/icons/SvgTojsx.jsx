@@ -21,3 +21,5 @@ export { default as LongArrowIcon } from './LongArrow.svg?react';
 export { default as RocketIcon } from './Rocket.svg?react';
 export { default as CopyIcon } from './Copy.svg?react';
 export { default as CheckMarkIcon } from './CheckMark.svg?react';
+export { default as FreeBetIcon } from './freeBetIcon.svg?react';
+export { default as SuccessIcon } from './success.svg?react';

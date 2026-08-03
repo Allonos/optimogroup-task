@@ -1,11 +1,9 @@
 import { useTranslation } from 'react-i18next';
 
-const PlaceBetButton = ({ amount, currency = 'USD', onClick }) => {
+const PlaceBetButton = ({ state = 'bet', amount, currency = 'USD', onClick }) => {
   const { t } = useTranslation();
 
-  const temp = 'bet';
-
-  const stateClass = temp !== 'bet' ? `bet-place-button--${temp}` : '';
+  const stateClass = state !== 'bet' ? `bet-place-button--${state}` : '';
 
   const labelKeyMap = {
     bet: 'bet',
@@ -19,7 +17,7 @@ const PlaceBetButton = ({ amount, currency = 'USD', onClick }) => {
       className={`bet-place-button${stateClass ? ` ${stateClass}` : ''}`}
       onClick={onClick}
     >
-      <span className='bet-place-button__label'>{t(labelKeyMap[temp])}</span>
+      <span className='bet-place-button__label'>{t(labelKeyMap[state] ?? 'bet')}</span>
       <span className='bet-place-button__amount'>
         {amount.toFixed(2)} {currency}
       </span>

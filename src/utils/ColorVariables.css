@@ -50,4 +50,8 @@
   --bet-place-cancel-right: 255, 93, 95, 1;
   --bet-place-free-bet-left: 152, 94, 255, 1;
   --bet-place-free-bet-right: 103, 36, 221, 1;
+  --red-overlay-gradient-start: 224, 29, 43, 0.1;
+  --red-overlay-gradient-end: 224, 29, 43, 0.4;
+  --red-lose-text: 224, 29, 43, 1;
+  --green-dark: 26, 108, 21, 1;
 }
